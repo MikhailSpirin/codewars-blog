@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Codewars blog</title>
-    <link>http://example.org/categories/</link>
-    <description>Recent content in Categories on Codewars blog</description>
+    <title>Categories on CodeWars solving Dao</title>
+    <link>https://mikhailspirin.github.io/codewars-blog/categories/</link>
+    <description>Recent content in Categories on CodeWars solving Dao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mikhailspirin.github.io/codewars-blog/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>codewars</title>
-      <link>http://example.org/categories/codewars/</link>
+      <link>https://mikhailspirin.github.io/codewars-blog/categories/codewars/</link>
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/categories/codewars/</guid>
+      <guid>https://mikhailspirin.github.io/codewars-blog/categories/codewars/</guid>
       <description></description>
     </item>
     
