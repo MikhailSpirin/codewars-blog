@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>development on Codewars blog</title>
+    <link>http://example.org/tags/development/</link>
+    <description>Recent content in development on Codewars blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reverse or rotate? - Kata 21</title>
+      <link>http://example.org/post/21-reverse-rotate/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/21-reverse-rotate/</guid>
+      <description>https://www.codewars.com/kata/56b5afb4ed1f6d5fb0000991/
+My solution function revrot(str, sz) { const isSumCubesDivsBy2 = (i) =&amp;gt; i.reduce((acc,curr)=&amp;gt;acc+(+curr)**3, 0) % 2 == 0; let res=[]; if (sz==0) return &amp;quot;&amp;quot;; for (let i=0; i&amp;lt;=str.length; i+=sz) res.push(str.slice(i,i+sz).split(&amp;quot;&amp;quot;)); if (res[res.length-1].length&amp;lt;sz) res=res.slice(0,res.length-1); return res.map(i=&amp;gt;{ return isSumCubesDivsBy2(i) ? i.reverse().join(&amp;quot;&amp;quot;) : [...i.slice(1), i[0]].join(&amp;quot;&amp;quot;) }).join(&amp;quot;&amp;quot;) }  I solved the problem, but in comparison to best answer i see that i don&amp;rsquo;t have enough experience (yet) about organizing code. This thing with 3 const functions looks and reads wonderful.</description>
+    </item>
+    
+  </channel>
+</rss>
