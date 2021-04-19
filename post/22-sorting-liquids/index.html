@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
   <head>
-    <title>Sorting liquids? - Kata 21 // CodeWars Dao</title>
+    <title>Kata 22: Sorting liquids // CodeWars Dao</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
     <meta name="generator" content="Hugo 0.82.0" />
@@ -12,10 +12,10 @@
 
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Sorting liquids? - Kata 21"/>
+<meta name="twitter:title" content="Kata 22: Sorting liquids"/>
 <meta name="twitter:description" content="Kata 22"/>
 
-    <meta property="og:title" content="Sorting liquids? - Kata 21" />
+    <meta property="og:title" content="Kata 22: Sorting liquids" />
 <meta property="og:description" content="Kata 22" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://mikhailspirin.github.io/codewars-blog/post/22-sorting-liquids/" /><meta property="article:section" content="post" />
@@ -31,15 +31,24 @@
       <h1>CodeWars Dao</h1>
       <nav class="app-header-menu">
           <a class="app-header-menu-item" href="/codewars-blog/">Home</a>
-             - 
+             ❆ 
           
           <a class="app-header-menu-item" href="/codewars-blog/about/">About this all</a>
-             - 
+             ❆ 
           
-          <a class="app-header-menu-item" href="/codewars-blog/post/21-reverse-rotate/">Reverse or rotate? - Kata 21</a>
-             - 
+          <a class="app-header-menu-item" href="/codewars-blog/post/1-vowel-count/">Kata 1: Vowel Count</a>
+             ❆ 
           
-          <a class="app-header-menu-item" href="/codewars-blog/post/22-sorting-liquids/">Sorting liquids? - Kata 21</a>
+          <a class="app-header-menu-item" href="/codewars-blog/post/21-reverse-rotate/">Kata 21: Reverse or rotate?</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/22-sorting-liquids/">Kata 22: Sorting liquids</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/2-next-perfect-square/">Kata 2: Next Perfect Square</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/3-camel-case/">Kata 3: Camel Case</a>
       </nav>
       <p>This is my way of solving CodeWars Katas - to track progress and show YOU my progress</p>
       <div class="app-header-social">
@@ -51,13 +60,27 @@
 </svg>
           </a>
         
+          <a href="https://www.linkedin.com/in/mikhail-spirin-6b0b1837/" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+  <title>LinkedIn</title>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg>
+          </a>
+        
+          <a href="https://www.instagram.com/mixail.spirin/" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-instagram">
+  <title>Instagram</title>
+  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+</svg>
+          </a>
+        
       </div>
     </header>
     <main class="app-container">
       
   <article class="post">
     <header class="post-header">
-      <h1 class ="post-title">Sorting liquids? - Kata 21</h1>
+      <h1 class ="post-title">Kata 22: Sorting liquids</h1>
       <div class="post-meta">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
@@ -86,45 +109,45 @@
     <div class="post-content">
       <p><a href="https://www.codewars.com/kata/562e6df5cf2d3908ad00019e/solutions/javascript">https://www.codewars.com/kata/562e6df5cf2d3908ad00019e/solutions/javascript</a></p>
 <h2 id="my-solution">My solution</h2>
-<pre><code>function separateLiquids(glass) {   /// glass[V][H]
-  const density = {
-    H : 1.36,
-    W : 1.00,
-    A : 0.87,
-    O : 0.80
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">separateLiquids</span>(<span style="color:#a6e22e">glass</span>) {   <span style="color:#75715e">/// glass[V][H]
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">density</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">H</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1.36</span>,
+    <span style="color:#a6e22e">W</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1.00</span>,
+    <span style="color:#a6e22e">A</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">0.87</span>,
+    <span style="color:#a6e22e">O</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">0.80</span>
   }
-  const chunkArray = (arr, size) =&gt;
-  arr.length &gt; size
-    ? [arr.slice(0, size), ...chunkArray(arr.slice(size), size)]
-    : [arr];
-  const srt = (a,b) =&gt; density[a] == density[b] ? 0 : (density[a] &gt; density[b] ? 1 : -1)
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">chunkArray</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">arr</span>, <span style="color:#a6e22e">size</span>) =&gt;
+  <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">size</span>
+    <span style="color:#f92672">?</span> [<span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">size</span>), ...<span style="color:#a6e22e">chunkArray</span>(<span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">size</span>), <span style="color:#a6e22e">size</span>)]
+    <span style="color:#f92672">:</span> [<span style="color:#a6e22e">arr</span>];
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">srt</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">density</span>[<span style="color:#a6e22e">a</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">density</span>[<span style="color:#a6e22e">b</span>] <span style="color:#f92672">?</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">:</span> (<span style="color:#a6e22e">density</span>[<span style="color:#a6e22e">a</span>] <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">density</span>[<span style="color:#a6e22e">b</span>] <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
   
-  if (!glass.length) return [];
-  return chunkArray(glass.reduce((a,b)=&gt;[...a, ...b]).sort(srt), glass[0].length)
+  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">glass</span>.<span style="color:#a6e22e">length</span>) <span style="color:#66d9ef">return</span> [];
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">chunkArray</span>(<span style="color:#a6e22e">glass</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>)=&gt;[...<span style="color:#a6e22e">a</span>, ...<span style="color:#a6e22e">b</span>]).<span style="color:#a6e22e">sort</span>(<span style="color:#a6e22e">srt</span>), <span style="color:#a6e22e">glass</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">length</span>)
 }
-</code></pre>
+</code></pre></div>
 <p>This is <strong>really</strong> cool kata. Thing is you go through several stages here, from first assumptions to first complicatetd atom conditions to final simple and very cool solution
 Before i understand that we have &ldquo;left&rdquo; direction and this could mean we just need to sort flat array, i spend some time on trying to get what kinds of limits we have here.</p>
-<p>Spend some time on thinkking about edge cases&hellip; Like</p>
+<p>Spend some time on thinking about edge cases&hellip; Like</p>
 <pre><code>00++
 ++++
 +111
 </code></pre>
-<p>But, after checking tests it turned out that this exact solution was expected.</p>
+<p>But, after checking tests it turned out that this exact solution was expected. And all is good.</p>
 <p>Also caught something new from other solutions:</p>
 <h2 id="best-different-solution">Best different solution</h2>
-<pre><code>const density = { H: 1.36, W: 1, A: .87, O: .8 };  
- 
-const separateLiquids = glass =&gt;
-  [].concat(...glass)
-    .sort((a, b) =&gt; density[a] - density[b])
-    .reduce((arr, v, i) =&gt; {
-      if (!(i % glass[0].length)) arr.push([]);
-      arr[arr.length - 1].push(v);
-      return arr;
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">density</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">H</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.36</span>, <span style="color:#a6e22e">W</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">A</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">.87</span>, <span style="color:#a6e22e">O</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">.8</span> };  
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">separateLiquids</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">glass</span> =&gt;
+  [].<span style="color:#a6e22e">concat</span>(...<span style="color:#a6e22e">glass</span>)
+    .<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">density</span>[<span style="color:#a6e22e">a</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">density</span>[<span style="color:#a6e22e">b</span>])
+    .<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">arr</span>, <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">i</span>) =&gt; {
+      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(<span style="color:#a6e22e">i</span> <span style="color:#f92672">%</span> <span style="color:#a6e22e">glass</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">length</span>)) <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>([]);
+      <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>].<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">v</span>);
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>;
     }, []);
-</code></pre>
-<p>Cool thing here is sorting function, which i relaly like and didn&rsquo;t come up with by myself.</p>
+</code></pre></div>
+Cool thing here is sorting function, which i relaly like and didn&rsquo;t come up with by myself.</p>
 
     </div>
     <div class="post-footer">

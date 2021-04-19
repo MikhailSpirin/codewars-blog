@@ -8,23 +8,56 @@
     <language>en-us</language>
     <lastBuildDate>Sat, 17 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mikhailspirin.github.io/codewars-blog/categories/codewars/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Sorting liquids? - Kata 21</title>
+      <title>Kata 22: Sorting liquids</title>
       <link>https://mikhailspirin.github.io/codewars-blog/post/22-sorting-liquids/</link>
       <pubDate>Sat, 17 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://mikhailspirin.github.io/codewars-blog/post/22-sorting-liquids/</guid>
       <description>https://www.codewars.com/kata/562e6df5cf2d3908ad00019e/solutions/javascript
-My solution function separateLiquids(glass) { /// glass[V][H] const density = { H : 1.36, W : 1.00, A : 0.87, O : 0.80 } const chunkArray = (arr, size) =&amp;gt; arr.length &amp;gt; size ? [arr.slice(0, size), ...chunkArray(arr.slice(size), size)] : [arr]; const srt = (a,b) =&amp;gt; density[a] == density[b] ? 0 : (density[a] &amp;gt; density[b] ? 1 : -1) if (!glass.length) return []; return chunkArray(glass.reduce((a,b)=&amp;gt;[...a, ...b]).sort(srt), glass[0].length) }  This is really cool kata.</description>
+My solution function separateLiquids(glass) { /// glass[V][H]  const density = { H : 1.36, W : 1.00, A : 0.87, O : 0.80 } const chunkArray = (arr, size) =&amp;gt; arr.length &amp;gt; size ? [arr.slice(0, size), ...chunkArray(arr.slice(size), size)] : [arr]; const srt = (a,b) =&amp;gt; density[a] == density[b] ? 0 : (density[a] &amp;gt; density[b] ? 1 : -1) if (!glass.length) return []; return chunkArray(glass.reduce((a,b)=&amp;gt;[...a, ...b]).sort(srt), glass[0].length) }  This is really cool kata.</description>
     </item>
     
     <item>
-      <title>Reverse or rotate? - Kata 21</title>
+      <title>Kata 21: Reverse or rotate?</title>
       <link>https://mikhailspirin.github.io/codewars-blog/post/21-reverse-rotate/</link>
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://mikhailspirin.github.io/codewars-blog/post/21-reverse-rotate/</guid>
       <description>https://www.codewars.com/kata/56b5afb4ed1f6d5fb0000991/
-My solution function revrot(str, sz) { const isSumCubesDivsBy2 = (i) =&amp;gt; i.reduce((acc,curr)=&amp;gt;acc+(+curr)**3, 0) % 2 == 0; let res=[]; if (sz==0) return &amp;quot;&amp;quot;; for (let i=0; i&amp;lt;=str.length; i+=sz) res.push(str.slice(i,i+sz).split(&amp;quot;&amp;quot;)); if (res[res.length-1].length&amp;lt;sz) res=res.slice(0,res.length-1); return res.map(i=&amp;gt;{ return isSumCubesDivsBy2(i) ? i.reverse().join(&amp;quot;&amp;quot;) : [...i.slice(1), i[0]].join(&amp;quot;&amp;quot;) }).join(&amp;quot;&amp;quot;) }  I solved the problem, but in comparison to best answer i see that i don&amp;rsquo;t have enough experience (yet) about organizing code. This thing with 3 const functions looks and reads wonderful.</description>
+My solution function revrot(str, sz) { const isSumCubesDivsBy2 = (i) =&amp;gt; i.reduce((acc,curr)=&amp;gt;acc+(+curr)**3, 0) % 2 == 0; let res=[]; if (sz==0) return &amp;#34;&amp;#34;; for (let i=0; i&amp;lt;=str.length; i+=sz) res.push(str.slice(i,i+sz).split(&amp;#34;&amp;#34;)); if (res[res.length-1].length&amp;lt;sz) res=res.slice(0,res.length-1); return res.map(i=&amp;gt;{ return isSumCubesDivsBy2(i) ? i.reverse().join(&amp;#34;&amp;#34;) : [...i.slice(1), i[0]].join(&amp;#34;&amp;#34;) }).join(&amp;#34;&amp;#34;) }  I solved the problem, but in comparison to best answer i see that i don&amp;rsquo;t have enough experience (yet) about organizing code. This thing with 3 const functions looks and reads wonderful.</description>
+    </item>
+    
+    <item>
+      <title>Kata 3: Camel Case</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/3-camel-case/</link>
+      <pubDate>Wed, 24 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/3-camel-case/</guid>
+      <description>https://www.codewars.com/kata/517abf86da9663f1d2000003
+My solution function toCamelCase(str){ return str.split(/[-_]/).map((x,i) =&amp;gt; i==0 ? x : x.charAt(0).toUpperCase() + x.slice(1)).join(&amp;#34;&amp;#34;) }  Main problem here for me was:
+ several separators for split (now it know i can use regexp in split(re)) to exclude first character. Solved with checking index, but i think better way may be is to use reduce. But i didn&amp;rsquo;t find how to do it&amp;hellip; Example of something similar is here:  var products = [{ Name: &amp;#39;milk&amp;#39;, price: 2.</description>
+    </item>
+    
+    <item>
+      <title>Kata 2: Next Perfect Square</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/2-next-perfect-square/</link>
+      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/2-next-perfect-square/</guid>
+      <description>https://www.codewars.com/kata/56269eb78ad2e4ced1000013
+My solution function findNextSquare(sq) { let base = Math.sqrt(sq); return base % 1 != 0 ? -1 : (base+1)*(base+1); }  </description>
+    </item>
+    
+    <item>
+      <title>Kata 1: Vowel Count</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/1-vowel-count/</link>
+      <pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/1-vowel-count/</guid>
+      <description>https://www.codewars.com/kata/54ff3102c1bad923760001f3/
+My solution Return the number (count) of vowels in the given string.
+function getCount(str) { let vowelsArr = str.match(/[aeiou]/ig) return vowelsArr != null ? vowelsArr.length : 0; }  Best another solution Cool lesson is working with null - this is clever solution:
+const getCount = (str)=&amp;gt;(str.match(/[aeiou]/ig)||[]).length;  </description>
     </item>
     
   </channel>
