@@ -1,26 +1,26 @@
 <!doctype html>
 <html lang="en-us">
   <head>
-    <title>Reverse or rotate? - Kata 21 // CodeWars Dao</title>
+    <title>Sorting liquids? - Kata 21 // CodeWars Dao</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
     <meta name="generator" content="Hugo 0.82.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Mikhail Spirin" />
-    <meta name="description" content="Kata 21" />
+    <meta name="description" content="Kata 22" />
     <link rel="stylesheet" href="https://mikhailspirin.github.io/codewars-blog/css/main.min.e3e673b07e6fcbedc1992304863ca607d598988089b7f690a51a8297034a9c03.css" />
 
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Reverse or rotate? - Kata 21"/>
-<meta name="twitter:description" content="Kata 21"/>
+<meta name="twitter:title" content="Sorting liquids? - Kata 21"/>
+<meta name="twitter:description" content="Kata 22"/>
 
-    <meta property="og:title" content="Reverse or rotate? - Kata 21" />
-<meta property="og:description" content="Kata 21" />
+    <meta property="og:title" content="Sorting liquids? - Kata 21" />
+<meta property="og:description" content="Kata 22" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://mikhailspirin.github.io/codewars-blog/post/21-reverse-rotate/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-04-16T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2021-04-16T00:00:00&#43;00:00" />
+<meta property="og:url" content="https://mikhailspirin.github.io/codewars-blog/post/22-sorting-liquids/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-04-17T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-04-17T00:00:00&#43;00:00" />
 
 
 
@@ -57,21 +57,21 @@
       
   <article class="post">
     <header class="post-header">
-      <h1 class ="post-title">Reverse or rotate? - Kata 21</h1>
+      <h1 class ="post-title">Sorting liquids? - Kata 21</h1>
       <div class="post-meta">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
   <title>calendar</title>
   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
 </svg>
-          Apr 16, 2021
+          Apr 17, 2021
         </div>
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
-          1 min read
+          2 min read
         </div>
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
@@ -84,38 +84,47 @@
       </div>
     </header>
     <div class="post-content">
-      <p><a href="https://www.codewars.com/kata/56b5afb4ed1f6d5fb0000991/">https://www.codewars.com/kata/56b5afb4ed1f6d5fb0000991/</a></p>
+      <p><a href="https://www.codewars.com/kata/562e6df5cf2d3908ad00019e/solutions/javascript">https://www.codewars.com/kata/562e6df5cf2d3908ad00019e/solutions/javascript</a></p>
 <h2 id="my-solution">My solution</h2>
-<pre><code>function revrot(str, sz) {
-  const isSumCubesDivsBy2 = (i) =&gt; i.reduce((acc,curr)=&gt;acc+(+curr)**3, 0) % 2 == 0;
-  let res=[];
-  if (sz==0) return &quot;&quot;;
-  for (let i=0; i&lt;=str.length; i+=sz)
-      res.push(str.slice(i,i+sz).split(&quot;&quot;));
-  if (res[res.length-1].length&lt;sz) res=res.slice(0,res.length-1);
-  return res.map(i=&gt;{
-   return isSumCubesDivsBy2(i) ? i.reverse().join(&quot;&quot;) : [...i.slice(1), i[0]].join(&quot;&quot;)
-  }).join(&quot;&quot;)
+<pre><code>function separateLiquids(glass) {   /// glass[V][H]
+  const density = {
+    H : 1.36,
+    W : 1.00,
+    A : 0.87,
+    O : 0.80
+  }
+  const chunkArray = (arr, size) =&gt;
+  arr.length &gt; size
+    ? [arr.slice(0, size), ...chunkArray(arr.slice(size), size)]
+    : [arr];
+  const srt = (a,b) =&gt; density[a] == density[b] ? 0 : (density[a] &gt; density[b] ? 1 : -1)
+  
+  if (!glass.length) return [];
+  return chunkArray(glass.reduce((a,b)=&gt;[...a, ...b]).sort(srt), glass[0].length)
 }
 </code></pre>
-<p>I solved the problem, but in comparison to best answer i see that i don&rsquo;t have enough experience (yet) about organizing code.
-This thing with 3 const functions looks and reads wonderful. Code in solution below is clean and clear.
-Mine is spaghetti in comparison, but i will try to improve.
-Also i see that i named function wrong here&hellip;</p>
+<p>This is <strong>really</strong> cool kata. Thing is you go through several stages here, from first assumptions to first complicatetd atom conditions to final simple and very cool solution
+Before i understand that we have &ldquo;left&rdquo; direction and this could mean we just need to sort flat array, i spend some time on trying to get what kinds of limits we have here.</p>
+<p>Spend some time on thinkking about edge cases&hellip; Like</p>
+<pre><code>00++
+++++
++111
+</code></pre>
+<p>But, after checking tests it turned out that this exact solution was expected.</p>
+<p>Also caught something new from other solutions:</p>
 <h2 id="best-different-solution">Best different solution</h2>
-<pre><code>function revrot(str, sz) {
-  if (sz &lt; 1 || sz &gt; str.length) 
-    return '';
-  
-  let reverse = s =&gt; s.split('').reverse().join('');
-  let rotate  = s =&gt; s.slice(1) + s.slice(0, 1);
-  let sum_cubes = c =&gt; c.split('').reduce((a, b) =&gt; a + +b ** 3, 0); 
-  
-  return str
-    .match(new RegExp('.{' + sz + '}', 'g'))
-    .map(c =&gt; sum_cubes(c) % 2 ? rotate(c) : reverse(c))
-    .join('');
-}</code></pre>
+<pre><code>const density = { H: 1.36, W: 1, A: .87, O: .8 };  
+ 
+const separateLiquids = glass =&gt;
+  [].concat(...glass)
+    .sort((a, b) =&gt; density[a] - density[b])
+    .reduce((arr, v, i) =&gt; {
+      if (!(i % glass[0].length)) arr.push([]);
+      arr[arr.length - 1].push(v);
+      return arr;
+    }, []);
+</code></pre>
+<p>Cool thing here is sorting function, which i relaly like and didn&rsquo;t come up with by myself.</p>
 
     </div>
     <div class="post-footer">

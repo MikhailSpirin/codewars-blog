@@ -6,7 +6,17 @@
     <description>Recent content in codewars on CodeWars Dao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mikhailspirin.github.io/codewars-blog/categories/codewars/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mikhailspirin.github.io/codewars-blog/categories/codewars/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sorting liquids? - Kata 21</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/22-sorting-liquids/</link>
+      <pubDate>Sat, 17 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/22-sorting-liquids/</guid>
+      <description>https://www.codewars.com/kata/562e6df5cf2d3908ad00019e/solutions/javascript
+My solution function separateLiquids(glass) { /// glass[V][H] const density = { H : 1.36, W : 1.00, A : 0.87, O : 0.80 } const chunkArray = (arr, size) =&amp;gt; arr.length &amp;gt; size ? [arr.slice(0, size), ...chunkArray(arr.slice(size), size)] : [arr]; const srt = (a,b) =&amp;gt; density[a] == density[b] ? 0 : (density[a] &amp;gt; density[b] ? 1 : -1) if (!glass.length) return []; return chunkArray(glass.reduce((a,b)=&amp;gt;[...a, ...b]).sort(srt), glass[0].length) }  This is really cool kata.</description>
+    </item>
+    
     <item>
       <title>Reverse or rotate? - Kata 21</title>
       <link>https://mikhailspirin.github.io/codewars-blog/post/21-reverse-rotate/</link>
