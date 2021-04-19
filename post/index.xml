@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on CodeWars solving Dao</title>
+    <title>Posts on CodeWars Dao</title>
     <link>https://mikhailspirin.github.io/codewars-blog/post/</link>
-    <description>Recent content in Posts on CodeWars solving Dao</description>
+    <description>Recent content in Posts on CodeWars Dao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mikhailspirin.github.io/codewars-blog/post/index.xml" rel="self" type="application/rss+xml" />
