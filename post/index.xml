@@ -6,7 +6,109 @@
     <description>Recent content in Posts on CodeWars Dao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 17 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://mikhailspirin.github.io/codewars-blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Apr 2021 00:00:00 +0300</lastBuildDate><atom:link href="https://mikhailspirin.github.io/codewars-blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kata 24: Stonks</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/24-stonks/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/24-stonks/</guid>
+      <description>https://www.codewars.com/kata/597ef546ee48603f7a000057
+My solution const count_sum = (arr)=&amp;gt;arr.reduce((a,b)=&amp;gt;a+b,0) function getMostProfitFromStockQuotes(quotes) { let max = Math.max(...quotes); let income_arr = quotes.slice(0, quotes.indexOf(max)); let income = max * income_arr.length - count_sum(income_arr); if (income &amp;lt; 0) income = 0; let left = quotes.slice(quotes.indexOf(max)+1); return (left.length == 0) ? income : income + getMostProfitFromStockQuotes(left); }  Main problem here was to understand the logic behind the task. At first i didn&amp;rsquo;t get how results in tests are evaluated.</description>
+    </item>
+    
+    <item>
+      <title>Kata 19 Number to Word</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/19-number-to-word/</link>
+      <pubDate>Tue, 20 Apr 2021 12:23:47 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/19-number-to-word/</guid>
+      <description>My solution  Best another solution  </description>
+    </item>
+    
+    <item>
+      <title>Kata 18 Statistics</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/18-statistics/</link>
+      <pubDate>Tue, 20 Apr 2021 12:23:33 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/18-statistics/</guid>
+      <description>My solution  Best another solution  </description>
+    </item>
+    
+    <item>
+      <title>Kata 17 Longest Palindrome</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/17-longest-palindrome/</link>
+      <pubDate>Tue, 20 Apr 2021 12:23:15 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/17-longest-palindrome/</guid>
+      <description>My solution  Best another solution  </description>
+    </item>
+    
+    <item>
+      <title>Kata 16 Count Presses</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/16-count-presses/</link>
+      <pubDate>Tue, 20 Apr 2021 12:23:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/16-count-presses/</guid>
+      <description>My solution  Best another solution  </description>
+    </item>
+    
+    <item>
+      <title>Kata 15 Word of A10n</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/15-word-of-a10n/</link>
+      <pubDate>Tue, 20 Apr 2021 12:22:40 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/15-word-of-a10n/</guid>
+      <description>My solution  Best another solution  </description>
+    </item>
+    
+    <item>
+      <title>Kata 14 Difference Between Arrays</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/14-difference-between-arrays/</link>
+      <pubDate>Tue, 20 Apr 2021 12:22:21 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/14-difference-between-arrays/</guid>
+      <description>My solution  Best another solution  </description>
+    </item>
+    
+    <item>
+      <title>Kata 13 Decomposing Factorial</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/13-decomposing-factorial/</link>
+      <pubDate>Tue, 20 Apr 2021 12:22:01 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/13-decomposing-factorial/</guid>
+      <description>My solution  Best another solution  </description>
+    </item>
+    
+    <item>
+      <title>Kata 12 Multiply N Primes</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/12-multiply-n-primes/</link>
+      <pubDate>Tue, 20 Apr 2021 12:21:36 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/12-multiply-n-primes/</guid>
+      <description>My solution  Best another solution  </description>
+    </item>
+    
+    <item>
+      <title>Kata 10 Sum Maximum Subarray</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/10-sum-maximum-subarray/</link>
+      <pubDate>Tue, 20 Apr 2021 12:20:45 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/10-sum-maximum-subarray/</guid>
+      <description>https://www.codewars.com/kata/54521e9ec8e60bc4de000d6c
+My solution var maxSequence = function(arr){ let bestSum = 0; return arr.reduce((acc, curr)=&amp;gt;{ bestSum = (bestSum + curr &amp;gt; curr) ? bestSum + curr : curr; return (acc &amp;gt; bestSum) ? acc : bestSum },0) }  Best another solution  </description>
+    </item>
+    
+    <item>
+      <title>Kata 23: Meeting</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/23-meeting/</link>
+      <pubDate>Tue, 20 Apr 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/23-meeting/</guid>
+      <description>https://www.codewars.com/kata/59df2f8f08c6cec835000012
+My solution const srt = (a,b) =&amp;gt;{ [anew,bnew] = [a.split(&amp;#34;:&amp;#34;), b.split(&amp;#34;:&amp;#34;)]; return (anew[1] == bnew[1]) ? anew[0].localeCompare(bnew[0]) : anew[1].localeCompare(bnew[1]) } const meeting = (s) =&amp;gt; { let res = s.toUpperCase().split(&amp;#34;;&amp;#34;).sort(srt) .reduce((acc,cur)=&amp;gt;{ let names=cur.split(&amp;#34;:&amp;#34;); return `${acc}(${names[1]}, ${names[0]})` },&amp;#34;&amp;#34;) return res; }  It was very interesting to solve this problem, as path is very straightforward, but im not that good in splitting main task into simple ones; in this case i managed to do this without any issues.</description>
+    </item>
+    
     <item>
       <title>Kata 22: Sorting liquids</title>
       <link>https://mikhailspirin.github.io/codewars-blog/post/22-sorting-liquids/</link>
@@ -25,6 +127,57 @@ My solution function separateLiquids(glass) { /// glass[V][H]  const density = {
       <guid>https://mikhailspirin.github.io/codewars-blog/post/21-reverse-rotate/</guid>
       <description>https://www.codewars.com/kata/56b5afb4ed1f6d5fb0000991/
 My solution function revrot(str, sz) { const isSumCubesDivsBy2 = (i) =&amp;gt; i.reduce((acc,curr)=&amp;gt;acc+(+curr)**3, 0) % 2 == 0; let res=[]; if (sz==0) return &amp;#34;&amp;#34;; for (let i=0; i&amp;lt;=str.length; i+=sz) res.push(str.slice(i,i+sz).split(&amp;#34;&amp;#34;)); if (res[res.length-1].length&amp;lt;sz) res=res.slice(0,res.length-1); return res.map(i=&amp;gt;{ return isSumCubesDivsBy2(i) ? i.reverse().join(&amp;#34;&amp;#34;) : [...i.slice(1), i[0]].join(&amp;#34;&amp;#34;) }).join(&amp;#34;&amp;#34;) }  I solved the problem, but in comparison to best answer i see that i don&amp;rsquo;t have enough experience (yet) about organizing code. This thing with 3 const functions looks and reads wonderful.</description>
+    </item>
+    
+    <item>
+      <title>Kata 9 Common Denominator</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/9-common-denominator/</link>
+      <pubDate>Sun, 04 Apr 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/9-common-denominator/</guid>
+      <description>https://www.codewars.com/kata/54d7660d2daf68c619000d95
+My solution function convertFrac(lst){ const lcm = (a,b) =&amp;gt; a/gcd(a,b)*b; const gcd = (a,b) =&amp;gt; b==0 ? a : gcd (b, a % b); let commonDenom = lst.map(x=&amp;gt;x[1]).reduce((acc,curr)=&amp;gt;lcm(acc,curr), 1); return lst.reduce((acc,curr)=&amp;gt; `${acc}(${curr[0]*commonDenom / curr[1]},${commonDenom})`,&amp;#34;&amp;#34;) }  I&amp;rsquo;m very proud of my reduce usage, its very cool in this case. Also it was interesting to try again gcd recursion. I hope i will remember algorythm once. At least i remember gcd/lcm terms.</description>
+    </item>
+    
+    <item>
+      <title>Kata 8 Rule of divisibility by 13</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/8-divisibility-13/</link>
+      <pubDate>Sat, 03 Apr 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/8-divisibility-13/</guid>
+      <description>https://www.codewars.com/kata/564057bc348c7200bd0000ff
+My solution let seq=[1,10,9,12,3,4]; function thirt(n) { let nNew = n.toString().split(&amp;#34;&amp;#34;).reverse().reduce((acc,curr,index)=&amp;gt;{ return acc += +curr*seq[index % 6]; }, 0); if (n == nNew) return n; else { return thirt(nNew); } }  Here i really liked my idea about seq[index % 6]. Task is to apply some fixed sequence to long list of didgits (i don&amp;rsquo;t know what is length of this list). I just take all seprate digits and apply element of sequence with index % 6.</description>
+    </item>
+    
+    <item>
+      <title>Kata 7: Break Camelcase</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/7-break-camelcase/</link>
+      <pubDate>Thu, 01 Apr 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/7-break-camelcase/</guid>
+      <description>https://www.codewars.com/kata/5208f99aee097e6552000148
+My solution function solution(string) { return string.split(&amp;#34;&amp;#34;) .reduce((acc,c)=&amp;gt; c.toLowerCase()!=c ? acc+&amp;#34; &amp;#34;+c : acc+c, &amp;#34;&amp;#34;) }  Best another solution I know i know its regexp. Capturing groups, lookahead probably and $1 $2. But i wanted to train reduce, its the only higher order function, which i don&amp;rsquo;t &amp;ldquo;feel&amp;rdquo; yet. But i definitely feel its very powerful.
+Solution came suprisingly fast, i just had to remember how to return acc.</description>
+    </item>
+    
+    <item>
+      <title>Kata 6 Grandmother Walk</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/6-grandmother-walk/</link>
+      <pubDate>Wed, 31 Mar 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/6-grandmother-walk/</guid>
+      <description>My solution function isValidWalk(walk) { return walk.length == 10 &amp;amp;&amp;amp; walk.filter(x=&amp;gt;x==&amp;#39;n&amp;#39;).length-walk.filter(x=&amp;gt;x==&amp;#39;s&amp;#39;).length == 0 &amp;amp;&amp;amp; walk.filter(x=&amp;gt;x==&amp;#39;e&amp;#39;).length-walk.filter(x=&amp;gt;x==&amp;#39;w&amp;#39;).length == 0 ? true : false; }  // First tried to solve it via reducing array - using its items as commands // then went for some coffee and understand that there is no sense in it, //i can isolate each separate dimension and just count its ++ and &amp;ndash;. // So task is 3 conditions now and became very simple.</description>
+    </item>
+    
+    <item>
+      <title>Kata 5 Decode Morse</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/5-decode-morse/</link>
+      <pubDate>Mon, 29 Mar 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/5-decode-morse/</guid>
+      <description>https://www.codewars.com/kata/54b724efac3d5402db00065e
+My solution decodeMorse = function(morseCode){ return morseCode.split(&amp;#34; &amp;#34;).map(word=&amp;gt;word.split(&amp;#34; &amp;#34;).map(ch=&amp;gt;MORSE_CODE[ch]).join(&amp;#34;&amp;#34;)).join(&amp;#34; &amp;#34;).trim(); }  Problem is internal map. I guess for best practices, it would be much better if i had an internal function for decoding separate letters - much readable, and i found such solution at 1st place among best practices
+Best another solution decodeMorse = function(morseCode){ return morseCode .trim() .split(/ | /) .map( (code) =&amp;gt; MORSE_CODE[code] || &amp;#39; &amp;#39;) .</description>
     </item>
     
     <item>

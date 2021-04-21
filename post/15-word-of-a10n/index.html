@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Kata 15 Word of A10n // CodeWars Dao</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.82.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Mikhail Spirin" />
+    <meta name="description" content="Kata" />
+    <link rel="stylesheet" href="https://mikhailspirin.github.io/codewars-blog/css/main.min.e3e673b07e6fcbedc1992304863ca607d598988089b7f690a51a8297034a9c03.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kata 15 Word of A10n"/>
+<meta name="twitter:description" content="Kata"/>
+
+    <meta property="og:title" content="Kata 15 Word of A10n" />
+<meta property="og:description" content="Kata" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mikhailspirin.github.io/codewars-blog/post/15-word-of-a10n/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-04-20T12:22:40&#43;03:00" />
+<meta property="article:modified_time" content="2021-04-20T12:22:40&#43;03:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://mikhailspirin.github.io/codewars-blog/"><img class="app-header-avatar" src="/codewars-blog/avatar.jpg" alt="Mikhail Spirin" /></a>
+      <h1>CodeWars Dao</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/codewars-blog/">Home</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/about/">About this all</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/10-sum-maximum-subarray/">Kata 10 Sum Maximum Subarray</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/12-multiply-n-primes/">Kata 12 Multiply N Primes</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/13-decomposing-factorial/">Kata 13 Decomposing Factorial</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/14-difference-between-arrays/">Kata 14 Difference Between Arrays</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/15-word-of-a10n/">Kata 15 Word of A10n</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/16-count-presses/">Kata 16 Count Presses</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/17-longest-palindrome/">Kata 17 Longest Palindrome</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/18-statistics/">Kata 18 Statistics</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/19-number-to-word/">Kata 19 Number to Word</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/1-vowel-count/">Kata 1: Vowel Count</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/21-reverse-rotate/">Kata 21: Reverse or rotate?</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/22-sorting-liquids/">Kata 22: Sorting liquids</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/23-meeting/">Kata 23: Meeting</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/24-stonks/">Kata 24: Stonks</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/2-next-perfect-square/">Kata 2: Next Perfect Square</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/3-camel-case/">Kata 3: Camel Case</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/5-decode-morse/">Kata 5 Decode Morse</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/6-grandmother-walk/">Kata 6 Grandmother Walk</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/7-break-camelcase/">Kata 7: Break Camelcase</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/8-divisibility-13/">Kata 8 Rule of divisibility by 13</a>
+             ❆ 
+          
+          <a class="app-header-menu-item" href="/codewars-blog/post/9-common-denominator/">Kata 9 Common Denominator</a>
+      </nav>
+      <p>This is my way of solving CodeWars Katas - to track progress and show YOU my progress</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/MikhailSpirin" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="https://www.linkedin.com/in/mikhail-spirin-6b0b1837/" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+  <title>LinkedIn</title>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg>
+          </a>
+        
+          <a href="https://www.instagram.com/mixail.spirin/" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-instagram">
+  <title>Instagram</title>
+  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Kata 15 Word of A10n</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 20, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://mikhailspirin.github.io/codewars-blog/tags/simple/">simple</a>
+              <a class="tag" href="https://mikhailspirin.github.io/codewars-blog/tags/development/">development</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h2 id="my-solution">My solution</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
+</code></pre></div>
+<h2 id="best-another-solution">Best another solution</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
+</code></pre></div>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
