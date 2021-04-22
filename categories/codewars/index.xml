@@ -18,88 +18,6 @@ My solution const count_sum = (arr)=&amp;gt;arr.reduce((a,b)=&amp;gt;a+b,0) func
     </item>
     
     <item>
-      <title>Kata 19 Number to Word</title>
-      <link>https://mikhailspirin.github.io/codewars-blog/post/19-number-to-word/</link>
-      <pubDate>Tue, 20 Apr 2021 12:23:47 +0300</pubDate>
-      
-      <guid>https://mikhailspirin.github.io/codewars-blog/post/19-number-to-word/</guid>
-      <description>My solution  Best another solution  </description>
-    </item>
-    
-    <item>
-      <title>Kata 18 Statistics</title>
-      <link>https://mikhailspirin.github.io/codewars-blog/post/18-statistics/</link>
-      <pubDate>Tue, 20 Apr 2021 12:23:33 +0300</pubDate>
-      
-      <guid>https://mikhailspirin.github.io/codewars-blog/post/18-statistics/</guid>
-      <description>My solution  Best another solution  </description>
-    </item>
-    
-    <item>
-      <title>Kata 17 Longest Palindrome</title>
-      <link>https://mikhailspirin.github.io/codewars-blog/post/17-longest-palindrome/</link>
-      <pubDate>Tue, 20 Apr 2021 12:23:15 +0300</pubDate>
-      
-      <guid>https://mikhailspirin.github.io/codewars-blog/post/17-longest-palindrome/</guid>
-      <description>My solution  Best another solution  </description>
-    </item>
-    
-    <item>
-      <title>Kata 16 Count Presses</title>
-      <link>https://mikhailspirin.github.io/codewars-blog/post/16-count-presses/</link>
-      <pubDate>Tue, 20 Apr 2021 12:23:00 +0300</pubDate>
-      
-      <guid>https://mikhailspirin.github.io/codewars-blog/post/16-count-presses/</guid>
-      <description>My solution  Best another solution  </description>
-    </item>
-    
-    <item>
-      <title>Kata 15 Word of A10n</title>
-      <link>https://mikhailspirin.github.io/codewars-blog/post/15-word-of-a10n/</link>
-      <pubDate>Tue, 20 Apr 2021 12:22:40 +0300</pubDate>
-      
-      <guid>https://mikhailspirin.github.io/codewars-blog/post/15-word-of-a10n/</guid>
-      <description>My solution  Best another solution  </description>
-    </item>
-    
-    <item>
-      <title>Kata 14 Difference Between Arrays</title>
-      <link>https://mikhailspirin.github.io/codewars-blog/post/14-difference-between-arrays/</link>
-      <pubDate>Tue, 20 Apr 2021 12:22:21 +0300</pubDate>
-      
-      <guid>https://mikhailspirin.github.io/codewars-blog/post/14-difference-between-arrays/</guid>
-      <description>My solution  Best another solution  </description>
-    </item>
-    
-    <item>
-      <title>Kata 13 Decomposing Factorial</title>
-      <link>https://mikhailspirin.github.io/codewars-blog/post/13-decomposing-factorial/</link>
-      <pubDate>Tue, 20 Apr 2021 12:22:01 +0300</pubDate>
-      
-      <guid>https://mikhailspirin.github.io/codewars-blog/post/13-decomposing-factorial/</guid>
-      <description>My solution  Best another solution  </description>
-    </item>
-    
-    <item>
-      <title>Kata 12 Multiply N Primes</title>
-      <link>https://mikhailspirin.github.io/codewars-blog/post/12-multiply-n-primes/</link>
-      <pubDate>Tue, 20 Apr 2021 12:21:36 +0300</pubDate>
-      
-      <guid>https://mikhailspirin.github.io/codewars-blog/post/12-multiply-n-primes/</guid>
-      <description>My solution  Best another solution  </description>
-    </item>
-    
-    <item>
-      <title>Kata 10 Sum Maximum Subarray</title>
-      <link>https://mikhailspirin.github.io/codewars-blog/post/10-sum-maximum-subarray/</link>
-      <pubDate>Tue, 20 Apr 2021 12:20:45 +0300</pubDate>
-      
-      <guid>https://mikhailspirin.github.io/codewars-blog/post/10-sum-maximum-subarray/</guid>
-      <description>https://www.codewars.com/kata/54521e9ec8e60bc4de000d6c
-My solution var maxSequence = function(arr){ let bestSum = 0; return arr.reduce((acc, curr)=&amp;gt;{ bestSum = (bestSum + curr &amp;gt; curr) ? bestSum + curr : curr; return (acc &amp;gt; bestSum) ? acc : bestSum },0) }  Best another solution  </description>
-    </item>
-    
-    <item>
       <title>Kata 23: Meeting</title>
       <link>https://mikhailspirin.github.io/codewars-blog/post/23-meeting/</link>
       <pubDate>Tue, 20 Apr 2021 00:00:00 +0300</pubDate>
@@ -127,6 +45,93 @@ My solution function separateLiquids(glass) { /// glass[V][H]  const density = {
       <guid>https://mikhailspirin.github.io/codewars-blog/post/21-reverse-rotate/</guid>
       <description>https://www.codewars.com/kata/56b5afb4ed1f6d5fb0000991/
 My solution function revrot(str, sz) { const isSumCubesDivsBy2 = (i) =&amp;gt; i.reduce((acc,curr)=&amp;gt;acc+(+curr)**3, 0) % 2 == 0; let res=[]; if (sz==0) return &amp;#34;&amp;#34;; for (let i=0; i&amp;lt;=str.length; i+=sz) res.push(str.slice(i,i+sz).split(&amp;#34;&amp;#34;)); if (res[res.length-1].length&amp;lt;sz) res=res.slice(0,res.length-1); return res.map(i=&amp;gt;{ return isSumCubesDivsBy2(i) ? i.reverse().join(&amp;#34;&amp;#34;) : [...i.slice(1), i[0]].join(&amp;#34;&amp;#34;) }).join(&amp;#34;&amp;#34;) }  I solved the problem, but in comparison to best answer i see that i don&amp;rsquo;t have enough experience (yet) about organizing code. This thing with 3 const functions looks and reads wonderful.</description>
+    </item>
+    
+    <item>
+      <title>Kata 19 Number to Word</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/19-number-to-word/</link>
+      <pubDate>Wed, 14 Apr 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/19-number-to-word/</guid>
+      <description>My solution function number2words(n, result = &amp;#34;&amp;#34;){ const d = { 0:&amp;#34;zero&amp;#34;, 1:&amp;#34;one&amp;#34;, 2:&amp;#34;two&amp;#34;, 3:&amp;#34;three&amp;#34;, 4: &amp;#34;four&amp;#34;, 5:&amp;#34;five&amp;#34;, 6:&amp;#34;six&amp;#34;, 7:&amp;#34;seven&amp;#34;, 8:&amp;#34;eight&amp;#34;, 9:&amp;#34;nine&amp;#34;, 10:&amp;#34;ten&amp;#34;, 11:&amp;#34;eleven&amp;#34;, 12:&amp;#34;twelve&amp;#34;, 13:&amp;#34;thirteen&amp;#34;, 14:&amp;#34;fourteen&amp;#34;, 15:&amp;#34;fifteen&amp;#34;, 16:&amp;#34;sixteen&amp;#34;, 17:&amp;#34;seventeen&amp;#34;, 18:&amp;#34;eighteen&amp;#34;, 19:&amp;#34;nineteen&amp;#34;, 20:&amp;#34;twenty&amp;#34;,30:&amp;#34;thirty&amp;#34;,40:&amp;#34;forty&amp;#34;,50:&amp;#34;fifty&amp;#34;,60:&amp;#34;sixty&amp;#34;,70:&amp;#34;seventy&amp;#34;,80:&amp;#34;eighty&amp;#34;,90:&amp;#34;ninety&amp;#34;, } switch (true) { case (n&amp;lt;=20 || n==30 || n==40 || n==50 || n==60 || n==70 || n==80 || n==90) : result = `${result}${d[n]}`; break; case (n&amp;gt;20 &amp;amp;&amp;amp; n&amp;lt;100): result = `${d[n-n%10]}-${d[n%10]}`; break; case (n%100 == 0 &amp;amp;&amp;amp; n&amp;lt;1000): result = `${d[Math.</description>
+    </item>
+    
+    <item>
+      <title>Kata 18: Statistics</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/18-statistics/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/18-statistics/</guid>
+      <description>My solution const convToMS = (i) =&amp;gt; { let t = i.split(&amp;#34;|&amp;#34;); return new Date(1970,1,1,t[0],t[1],t[2]).getTime() } const convToDate = (i) =&amp;gt; { let t = new Date(i) return `${zero(t.getHours())}|${zero(t.getMinutes())}|${zero(t.getSeconds())}` } const zero = (i) =&amp;gt; i &amp;lt; 10 ? `0${i}` : i; const stat = (strg) =&amp;gt; { if (!strg) return &amp;#34;&amp;#34;; let tMS = strg.split(&amp;#34;, &amp;#34;).map(convToMS).sort((a,b)=&amp;gt;a-b); let len = tMS.length; let range = tMS[len-1] - tMS[0]; let average = tMS.</description>
+    </item>
+    
+    <item>
+      <title>Kata 17: Longest Palindrome</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/17-longest-palindrome/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/17-longest-palindrome/</guid>
+      <description>My solution longestPalindrome=function(s){ const checkIfPalindrome = (arr) =&amp;gt; arr.join(&amp;#34;&amp;#34;) == arr.reverse().join(&amp;#34;&amp;#34;) const findMaxPalindrome = (acc,c,ind,arr)=&amp;gt; { let maxP = &amp;#34;&amp;#34;; //check case of odd length palindrome  let j=1; let tryP = c; while((ind-j)&amp;gt;=0 &amp;amp;&amp;amp; (ind+j)&amp;lt;=arr.length) { tryP = [arr[ind-j], ...tryP, arr[ind+j]]; if (checkIfPalindrome(tryP) &amp;amp;&amp;amp; tryP.length &amp;gt; maxP.length) { maxP = tryP.join(&amp;#34;&amp;#34;); } else break; j++; } j=1; tryP = [c, arr[ind+1]]; while((ind-j)&amp;gt;=0 &amp;amp;&amp;amp; (ind+j+1) &amp;lt;= arr.length) { tryP = [arr[ind-j], .</description>
+    </item>
+    
+    <item>
+      <title>Kata 16: Count Presses</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/16-count-presses/</link>
+      <pubDate>Sun, 11 Apr 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/16-count-presses/</guid>
+      <description>https://www.codewars.com/kata/54a2e93b22d236498400134b
+My solution function presses(phrase) { let combi = [&amp;#39;1&amp;#39;, &amp;#39;ABC2&amp;#39;, &amp;#39;DEF3&amp;#39;, &amp;#39;GHI4&amp;#39;, &amp;#39;JKL5&amp;#39;, &amp;#39;MNO6&amp;#39;, &amp;#39;PQRS7&amp;#39;, &amp;#39;TUV8&amp;#39;, &amp;#39;WXYZ9&amp;#39;, &amp;#39;*&amp;#39;, &amp;#39; 0&amp;#39;, &amp;#39;#&amp;#39; ]; return phrase.toUpperCase().split(&amp;#34;&amp;#34;).reduce((acc, curr)=&amp;gt;{ let word = combi.filter(i=&amp;gt;i.includes(curr))[0]; return acc+word.indexOf(curr)+1; },0); }  Very iportant in this kata for my POV - how to make it simple and effective, so that in real life you can give it diffreent keyboard layouts
+But now i think that simples solution might be better - just additional helper to transform layouts to number of presses and store object with &amp;ldquo;symbol&amp;rdquo;:&amp;ldquo;number of presses&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Kata 15: Word of A10n</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/15-word-of-a10n/</link>
+      <pubDate>Sat, 10 Apr 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/15-word-of-a10n/</guid>
+      <description>https://www.codewars.com/kata/5375f921003bf62192000746
+My solution const abbreviate = (string) =&amp;gt; string.replace(/\w+/gim, (s)=&amp;gt;s.length&amp;lt;4 ? s : `${s.slice(0,1)}${s.length-2}${s.slice(s.length-1)}`);  Best another solution Oneliner - which i do like. Cool that my solution is actually almost exactly &amp;ldquo;best practices&amp;rdquo; + &amp;ldquo;clever&amp;rdquo; solution.</description>
+    </item>
+    
+    <item>
+      <title>Kata 14: Difference Between Arrays</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/14-difference-between-arrays/</link>
+      <pubDate>Fri, 09 Apr 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/14-difference-between-arrays/</guid>
+      <description>https://www.codewars.com/kata/523f5d21c841566fde000009
+My solution function arrayDiff(a, b) { return a.reduce((acc, curr) =&amp;gt; b.indexOf(curr) == -1 ? [...acc, curr] : acc, []); }  thought it is very clever until i saw this one:
+Best another solution function array_diff(a, b) { return a.filter(e =&amp;gt; !b.includes(e)); }  i forgot about filter&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Kata 13: Decomposing Factorial</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/13-decomposing-factorial/</link>
+      <pubDate>Thu, 08 Apr 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/13-decomposing-factorial/</guid>
+      <description>My solution function decomp(n) { const subDecomp = (num,dividers) =&amp;gt; { let rem = num; for (let i=2; i&amp;lt;=Math.sqrt(num); i++) { if (rem % i === 0){ if (!dividers[i]) dividers[i] = 0; while (rem % i === 0){ dividers[i]++; rem /= i; } } } if (rem &amp;gt; 1) dividers[rem] = !dividers[rem] ? 1 :dividers[rem]+1; return dividers; } divs = {}; for (let i=2; i&amp;lt;=n; i++){ divs=subDecomp(i,divs); } return Object.keys(divs).map(x=&amp;gt;divs[x] == 1 ?</description>
+    </item>
+    
+    <item>
+      <title>Kata 12: Multiply N Primes</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/12-multiply-n-primes/</link>
+      <pubDate>Tue, 06 Apr 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/12-multiply-n-primes/</guid>
+      <description>My solution function numPrimorial(n){ const findPrimes = (lim) =&amp;gt; { let arr = Array(lim).fill(true); arr[0]=arr[1]=false; for (let i=2; i&amp;lt;=Math.sqrt(lim); i++) if (arr[i] == true) for (j=i*i; j&amp;lt;lim; j+=i) arr[j] = false; return arr.reduce((out, bool, i) =&amp;gt; bool ? out.concat(i) : out, [] ); } primes=[]; for (i=n; primes.length &amp;lt; n; i*=2) primes = findPrimes(i); return primes.slice(0,n).reduce((acc,curr) =&amp;gt; acc *= curr, 1) }  I hope i will finally remember Sieve of Eratosthenes algorytm.</description>
+    </item>
+    
+    <item>
+      <title>Kata 10 Sum Maximum Subarray</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/10-sum-maximum-subarray/</link>
+      <pubDate>Sun, 04 Apr 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/10-sum-maximum-subarray/</guid>
+      <description>https://www.codewars.com/kata/54521e9ec8e60bc4de000d6c
+My solution var maxSequence = function(arr){ let bestSum = 0; return arr.reduce((acc, curr)=&amp;gt;{ bestSum = (bestSum + curr &amp;gt; curr) ? bestSum + curr : curr; return (acc &amp;gt; bestSum) ? acc : bestSum },0) }  This is another algorytm - Kadane Algorytm, which i have no chance to come up with)) So i just read about it it in wiki and created my understood version of it</description>
     </item>
     
     <item>
