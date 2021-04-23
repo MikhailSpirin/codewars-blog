@@ -6,7 +6,27 @@
     <description>Recent content in development on CodeWars Dao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Apr 2021 00:00:00 +0300</lastBuildDate><atom:link href="https://mikhailspirin.github.io/codewars-blog/tags/development/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Apr 2021 00:00:00 +0300</lastBuildDate><atom:link href="https://mikhailspirin.github.io/codewars-blog/tags/development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kata 25 Matching and Substituting</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/25-matching-and-substituting/</link>
+      <pubDate>Fri, 23 Apr 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/25-matching-and-substituting/</guid>
+      <description>https://www.codewars.com/kata/59de1e2fe50813a046000124/
+My solution function change(s, prog, version) { let prog_regex = /(?&amp;lt;=Program).*\n/gm; let author_regex = /(?&amp;lt;=Author: ).*\n/gm; let phone_regex = /(?&amp;lt;=Phone: ).*\n/gm let valid_phone_regex = /\+1-\d{3}-\d{3}-\d{4}\n/gm let corp_regex = /Corporation: .*\n/gm; let date_regex = /(?&amp;lt;=Date: )(.*)\n/gm; let vers_regex = /(?&amp;lt;=Version: ).*\n/gm; let valid_vers_regex = /(?&amp;lt;=Version: )\d+\.\d+\n/gm let level_regex = /Level: .*/gm; return !(valid_phone_regex.test(s) &amp;amp;&amp;amp; valid_vers_regex.test(s)) ? &amp;#34;ERROR: VERSION or PHONE&amp;#34; : s.replace(prog_regex, `: ${prog}`) .replace(author_regex, `g964 `) .replace(corp_regex, ``) .replace(phone_regex, `+1-503-555-0090 `) .</description>
+    </item>
+    
+    <item>
+      <title>Kata 4: Trailing Zeros</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/4-trailing-zeros/</link>
+      <pubDate>Fri, 23 Apr 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/4-trailing-zeros/</guid>
+      <description>https://www.codewars.com/kata/52f787eb172a8b4ae1000a34/train/javascript
+My solution function zeros (n) { let factors5 = [] let num = 1; do factors5 = [...factors5, num *=5]; while (num&amp;lt;n); return factors5.reduce((counter, item)=&amp;gt; counter += Math.floor(n / item), 0) }  Very cool cata, but its pure math, its not that much dev here. I tried 3 approaches - first generate array of digits and then delete all except 2,5 and 0. Too big array. 12s timeout/ 2nd approach was - find how many terms i have - of 2 and 5 and 0.</description>
+    </item>
+    
     <item>
       <title>Kata 24: Stonks</title>
       <link>https://mikhailspirin.github.io/codewars-blog/post/24-stonks/</link>
