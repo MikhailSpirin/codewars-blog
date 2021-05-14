@@ -6,7 +6,77 @@
     <description>Recent content in codewars on CodeWars Dao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Apr 2021 00:00:00 +0300</lastBuildDate><atom:link href="https://mikhailspirin.github.io/codewars-blog/categories/codewars/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 May 2021 00:00:00 +0300</lastBuildDate><atom:link href="https://mikhailspirin.github.io/codewars-blog/categories/codewars/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kata 32 String Incrementer</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/32-string-incrementer/</link>
+      <pubDate>Fri, 14 May 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/32-string-incrementer/</guid>
+      <description>https://www.codewars.com/kata/54a91a4883a7de5d7800009c/
+My solution const inc_zeros = (n) =&amp;gt; { let r = `${+n+1}`; while (r.length&amp;lt;n.length) r = `0${r}`; return r } function incrementString (strng) { return strng.replace(/(\D*)(\d*$)/, (_,p1,p2,offset,s) =&amp;gt; { console.log(p1,p2); if (p2.length == 0) return `${p1}1`; if (p2.length == p2.replace(/^0+/, &amp;#39;&amp;#39;).length) return `${p1}${+p2+1}` else return `${p1}${inc_zeros(p2)}`; } ); }  It was hard kata for me, becasue i didn&amp;rsquo;t manage to find beautiful solution. I feel like mine is bad, but i cant figure out what to refactor.</description>
+    </item>
+    
+    <item>
+      <title>Kata 31: New Holiday</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/31-new-holiday/</link>
+      <pubDate>Thu, 06 May 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/31-new-holiday/</guid>
+      <description>https://www.codewars.com/kata/58982a388927f70d8b000111/
+My solution function holiday(x, weekDay, month, yearNumber) { const months = [&amp;#34;January&amp;#34;, &amp;#34;February&amp;#34;, &amp;#34;March&amp;#34;, &amp;#34;April&amp;#34;, &amp;#34;May&amp;#34;, &amp;#34;June&amp;#34;, &amp;#34;July&amp;#34;, &amp;#34;August&amp;#34;, &amp;#34;September&amp;#34;, &amp;#34;October&amp;#34;, &amp;#34;November&amp;#34;, &amp;#34;December&amp;#34;]; const leapyear = ((yearNumber % 100 === 0) ? ( yearNumber % 400 === 0) : (yearNumber % 4 === 0)); const daysinmonths = [31, leapyear ? 29 : 28 , 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; let days = [&amp;#34;Sunday&amp;#34;, &amp;#34;Monday&amp;#34;, &amp;#34;Tuesday&amp;#34;, &amp;#34;Wednesday&amp;#34;, &amp;#34;Thursday&amp;#34;, &amp;#34;Friday&amp;#34;, &amp;#34;Saturday&amp;#34;]; let firstday = (new Date(`${month}1, ${yearNumber}`)).</description>
+    </item>
+    
+    <item>
+      <title>Kata 30: Advanced Pig Latin</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/30-advanced-pig-latin/</link>
+      <pubDate>Thu, 29 Apr 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/30-advanced-pig-latin/</guid>
+      <description>My solution function piggify(w) { let isCapital = w[0] === w[0].toUpperCase(); let regex = /(^[b-df-hj-np-tv-z]*)([aeoui]\w*)(\W*)/; let piggified = w.toLowerCase().replace(regex, (_,p1,p2,p3)=&amp;gt;{ return (p1.length==0) ? `${p2}way${p3}` : `${p2}${p1}ay${p3}` }) return isCapital ? `${piggified[0].toUpperCase()}${piggified.slice(1)}` : piggified } function translate(sentence) { return sentence.split(&amp;#34; &amp;#34;).map(piggify).join(&amp;#34; &amp;#34;); };  Look i spent some time trying to avoid regexp here) But soon understood that this adds ineviteable complexity. Thing is its manipulating chunks of string - exactly regexp is probably the best fit.</description>
+    </item>
+    
+    <item>
+      <title>Kata 29 Lazy Evaluation</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/29-lazy-eval/</link>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/29-lazy-eval/</guid>
+      <description>My solution function Lazy() { let functions = []; let obj = { add(...args) { functions.push(args); return this; }, invoke(target) { return functions .reduce((acc, cur)=&amp;gt; cur[0].apply(null, [...cur.slice(1), ...acc]),target) } } return obj; }  Finally! This is what expected when people say &amp;ldquo;functional programming&amp;rdquo;. Very-very cool kata, not as complicted algorytm, but about managing functions. Was very interesting. Found half of solution by request &amp;ldquo;how to chain functions&amp;rdquo;, but i had problems with understanding how to pass function with arguments to the list.</description>
+    </item>
+    
+    <item>
+      <title>Kata 28: How Much</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/28-how-much/</link>
+      <pubDate>Mon, 26 Apr 2021 10:48:20 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/28-how-much/</guid>
+      <description>https://www.codewars.com/kata/55b4d87a3766d9873a0000d4
+My solution Ok so 6th level for me now is usually not more than 20 mins. I should use it only if know that i will not have a chance to work on bigger kata today.
+This was simple.. Just needed some math googling
+function howmuch(m, n) { if (m&amp;gt;n) [m,n] = [n,m]; let arr = []; for (let x = m; x&amp;lt;=n; x++) if ((x-1)%9==0 &amp;amp;&amp;amp; (x-2)%7==0) arr = [.</description>
+    </item>
+    
+    <item>
+      <title>Kata 27 Backspaces Processing</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/27-backspaces-processing/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/27-backspaces-processing/</guid>
+      <description>https://www.codewars.com/kata/5727bb0fe81185ae62000ae3/
+My solution function cleanString(s) { return s.split(&amp;#34;&amp;#34;) .reduce((acc,curr)=&amp;gt;curr == &amp;#34;#&amp;#34; ? acc.slice(0,-1) : `${acc}${curr}`,&amp;#34;&amp;#34;) };  This was cool and simple. Clear example of reduce usage. Can&amp;rsquo;t come up with something simpler.
+Best another solution Strange, but crowd thinks that push/pop solution is better. Its a mistake. Mine or their&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Kata 26: Dont Eat Last Cake</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/26-dont-eat-last-cake/</link>
+      <pubDate>Sat, 24 Apr 2021 13:46:33 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/26-dont-eat-last-cake/</guid>
+      <description>My solution // Constructor (your Captain Obivious) function Player(){} // Decide who move first - player or opponent (true if player)  const winning = (i) =&amp;gt; { let left = (i - 2) % 4; return (left == 0) ? 0 : left; } Player.prototype.firstmove = function(cakes){ if (cakes==1) return false; if (cakes==2) return false; return (winning(cakes) == 0) ? false : true; } // Decide your next move Player.</description>
+    </item>
+    
     <item>
       <title>Kata 25 Matching and Substituting</title>
       <link>https://mikhailspirin.github.io/codewars-blog/post/25-matching-and-substituting/</link>
