@@ -6,7 +6,85 @@
     <description>Recent content in simple on CodeWars Dao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 May 2021 00:00:00 +0300</lastBuildDate><atom:link href="https://mikhailspirin.github.io/codewars-blog/tags/simple/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 May 2021 00:00:00 +0300</lastBuildDate><atom:link href="https://mikhailspirin.github.io/codewars-blog/tags/simple/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kata 40 Last Survivor 2</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/40-last-survivor-2/</link>
+      <pubDate>Tue, 25 May 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/40-last-survivor-2/</guid>
+      <description>My solution function lastSurvivors(str) { const hasDuplicates = (arr) =&amp;gt; new Set(arr).size !== arr.length; let str_arr = str.split(&amp;#34;&amp;#34;).map(x=&amp;gt;x.charCodeAt(0)); while (hasDuplicates(str_arr)) { for (const c of str_arr) { [first,last] = [str_arr.indexOf(c), str_arr.lastIndexOf(c)] if (first !== last) { str_arr[first] = (c == 122) ? 97 : str_arr[first] + 1; str_arr.splice(last, 1); break; } } } return str_arr.map(x=&amp;gt;String.fromCharCode(x)).join(&amp;#34;&amp;#34;); }  Ok so i spent some time on this. Main problem is that i tried to solve this kata with ES6 abilities - but i failed.</description>
+    </item>
+    
+    <item>
+      <title>Kata 39 Chess Fun Cell Color</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/39-chess-fun-cell-color/</link>
+      <pubDate>Mon, 24 May 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/39-chess-fun-cell-color/</guid>
+      <description>https://www.codewars.com/kata/5894134c8afa3618c9000146
+My solution function chessBoardCellColor(cell1, cell2) { const parity = (cell) =&amp;gt; (&amp;#34;_ABCDEFGH&amp;#34;.indexOf(cell.split(&amp;#34;&amp;#34;)[0]) + Number(cell.split(&amp;#34;&amp;#34;)[1])) % 2 == 0; return parity(cell1) === parity(cell2) }  Ok, that was simple. Can&amp;rsquo;t find better solution in solutions.</description>
+    </item>
+    
+    <item>
+      <title>Kata 38 Which Are In</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/38-which-are-in/</link>
+      <pubDate>Fri, 21 May 2021 12:25:49 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/38-which-are-in/</guid>
+      <description>https://www.codewars.com/kata/550554fd08b86f84fe000a58/
+My solution function inArray(array1,array2){ return array1.filter(e =&amp;gt; array2.some(str=&amp;gt;str.indexOf(e) != -1)).sort((a,b)=&amp;gt;a.localeCompare(b)) }  Cool, that was really simple)</description>
+    </item>
+    
+    <item>
+      <title>Kata 37 Traffic Jam</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/37-traffic-jam/</link>
+      <pubDate>Thu, 20 May 2021 14:15:32 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/37-traffic-jam/</guid>
+      <description>https://www.codewars.com/kata/5a26073ce1ce0e3c01000023
+My solution var trafficJam = function(mainRoad, sideStreets) { let mr = mainRoad.split(&amp;#34;&amp;#34;); let out = sideStreets.reduceRight((acc,curr,i)=&amp;gt;{ if (curr!=&amp;#34;&amp;#34;) { curr.split(&amp;#34;&amp;#34;).reverse().forEach((e,ei)=&amp;gt;mr.splice(i+ei*2+1, 0, e)); return mr; } else return mr; }, mr); return out.slice(0,mr.indexOf(&amp;#34;X&amp;#34;)+1).join(&amp;#34;&amp;#34;); }  That was the most amazing moment in my (not-yet-started) dev career. Really. I spent almost whole day on this kata. Couldn&amp;rsquo;t understand the approach. Tried different ones.
+Main moment here is when i started to investigate, if all separate side roads addding can be somehow atomic - not like 1 car by 1 car, but whole line of cars.</description>
+    </item>
+    
+    <item>
+      <title>Kata 35 Snake Collision</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/35-snake-collision/</link>
+      <pubDate>Tue, 18 May 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/35-snake-collision/</guid>
+      <description>My solution function snakeCollision(g, m){ let snake = [[0, 0],[0, 1],[0, 2]]; let d = &amp;#34;R&amp;#34;; let steps = 0; const isFood = (cords) =&amp;gt; g[cords[0]][cords[1]]==&amp;#39;$&amp;#39;; const isSnake = (cords) =&amp;gt; snake.some((e)=&amp;gt;(e[0]==cords[0] &amp;amp;&amp;amp; e[1]==cords[1])); const isBorder = (cords) =&amp;gt; (cords[0] &amp;lt; 0 || cords[0] &amp;gt;= 13 || cords[1] &amp;lt; 0 || cords[1] &amp;gt;= 21); const head = () =&amp;gt; snake[snake.length-1]; const move = (d) =&amp;gt; { let dest; switch (d) { case &amp;#34;D&amp;#34;: dest = [head()[0]+1, head()[1]]; break; case &amp;#34;R&amp;#34;: dest = [head()[0], head()[1]+1]; break; case &amp;#34;U&amp;#34;: dest = [head()[0]-1, head()[1]]; break; case &amp;#34;L&amp;#34;: dest = [head()[0], head()[1]-1]; break; } if (isBorder(dest)) return false; if (isSnake(dest)) return false; snake.</description>
+    </item>
+    
+    <item>
+      <title>Kata 36 Merge Strings Checker</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/36-merge-strings-checker/</link>
+      <pubDate>Mon, 17 May 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/36-merge-strings-checker/</guid>
+      <description>https://www.codewars.com/kata/54c9fcad28ec4c6e680011aa
+My solution function isMerge(s, part1, part2) { const takeFromFirst = (s,arr1,arr2) =&amp;gt; { for (let i in s) { if (s[i]==arr1[i] &amp;amp;&amp;amp; s[i]==arr2[i] ) continue; if (s[i]==arr1[i] &amp;amp;&amp;amp; s[i]!==arr2[i]) return true; if (s[i]!==arr1[i] &amp;amp;&amp;amp; s[i]==arr2[i]) return false; } } let [part1arr, part2arr] = [part1.split(&amp;#34;&amp;#34;), part2.split(&amp;#34;&amp;#34;)]; for (let i in s) { if (s[i] == part1arr[0] &amp;amp;&amp;amp; s[i] == part2arr[0]) { console.log(&amp;#34;we have very complicated situation here&amp;#34;); if (takeFromFirst(s.slice(i), part1arr, part2arr)) part1arr.</description>
+    </item>
+    
+    <item>
+      <title>Kata 34 Sort Strings Vowels</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/34-sort-strings-vowels/</link>
+      <pubDate>Sun, 16 May 2021 22:44:54 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/34-sort-strings-vowels/</guid>
+      <description>https://www.codewars.com/kata/5d2d0d34bceae80027bffddb
+My solution const srt = (a,b) =&amp;gt; { if (a.length == b.length) return 0; return a.length &amp;gt; b.length ? -1 : 1 } const longestsubstr = (e) =&amp;gt; (e.match(/[aeiouAEIOU]+/gm) || []).sort(srt)[0]; function sortStringsByVowels(strings){ return strings.sort((a,b) =&amp;gt; srt((longestsubstr(a) || []),(longestsubstr(b) || []))); }  Well i think my solution is clearer) definitely i must have refactored my sorting function. But im really happy i managed to get the general approach. Also i think it&amp;rsquo;s not 6, its definitely 5 kyu&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Kata 33 Simple Fun Best Match</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/33-simple-fun-best-match/</link>
+      <pubDate>Sat, 15 May 2021 15:03:14 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/33-simple-fun-best-match/</guid>
+      <description>My solution function bestMatch(ALAHLYGoals, zamalekGoals) { const srt = (a,b)=&amp;gt;{ if (a[0]==b[0] &amp;amp;&amp;amp; a[1]&amp;gt;b[1]) return -1; if (a[0]==b[0] &amp;amp;&amp;amp; a[1]&amp;lt;b[1]) return 1; if (a[0]==b[0] &amp;amp;&amp;amp; a[1]==b[1] &amp;amp;&amp;amp; a[2]&amp;gt;b[2]) return 1; if (a[0]==b[0] &amp;amp;&amp;amp; a[1]==b[1] &amp;amp;&amp;amp; a[2]&amp;lt;b[2]) return -1; return a[0]&amp;gt;b[0] ? 1 : -1; } return zamalekGoals.map((e,i)=&amp;gt;[ALAHLYGoals[i]-e, e, i]).sort(srt)[0][2]; }  Best another solution function bestMatch(aGoals, bGoals) { return bGoals .reduce((best, goals, i) =&amp;gt; { const diff = aGoals[i] - goals; return !</description>
+    </item>
+    
     <item>
       <title>Kata 32 String Incrementer</title>
       <link>https://mikhailspirin.github.io/codewars-blog/post/32-string-incrementer/</link>
