@@ -3,27 +3,45 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mikhailspirin.github.io/codewars-blog/categories/</loc>
-    <lastmod>2021-05-25T00:00:00+03:00</lastmod>
+    <lastmod>2021-07-28T16:24:03+03:00</lastmod>
   </url><url>
     <loc>https://mikhailspirin.github.io/codewars-blog/categories/codewars/</loc>
-    <lastmod>2021-05-25T00:00:00+03:00</lastmod>
+    <lastmod>2021-07-28T16:24:03+03:00</lastmod>
   </url><url>
     <loc>https://mikhailspirin.github.io/codewars-blog/</loc>
-    <lastmod>2021-05-25T00:00:00+03:00</lastmod>
+    <lastmod>2021-07-28T16:24:03+03:00</lastmod>
   </url><url>
     <loc>https://mikhailspirin.github.io/codewars-blog/tags/development/</loc>
-    <lastmod>2021-05-25T00:00:00+03:00</lastmod>
+    <lastmod>2021-07-28T16:24:03+03:00</lastmod>
   </url><url>
-    <loc>https://mikhailspirin.github.io/codewars-blog/post/40-last-survivor-2/</loc>
-    <lastmod>2021-05-25T00:00:00+03:00</lastmod>
+    <loc>https://mikhailspirin.github.io/codewars-blog/post/45-sort-the-odd/</loc>
+    <lastmod>2021-07-28T16:24:03+03:00</lastmod>
   </url><url>
     <loc>https://mikhailspirin.github.io/codewars-blog/post/</loc>
-    <lastmod>2021-05-25T00:00:00+03:00</lastmod>
+    <lastmod>2021-07-28T16:24:03+03:00</lastmod>
   </url><url>
     <loc>https://mikhailspirin.github.io/codewars-blog/tags/simple/</loc>
-    <lastmod>2021-05-25T00:00:00+03:00</lastmod>
+    <lastmod>2021-07-28T16:24:03+03:00</lastmod>
   </url><url>
     <loc>https://mikhailspirin.github.io/codewars-blog/tags/</loc>
+    <lastmod>2021-07-28T16:24:03+03:00</lastmod>
+  </url><url>
+    <loc>https://mikhailspirin.github.io/codewars-blog/post/46-transformation-iteration/</loc>
+    <lastmod>2021-07-28T16:23:55+03:00</lastmod>
+  </url><url>
+    <loc>https://mikhailspirin.github.io/codewars-blog/post/44-function-iteration/</loc>
+    <lastmod>2021-06-10T00:00:00+03:00</lastmod>
+  </url><url>
+    <loc>https://mikhailspirin.github.io/codewars-blog/post/43-sudoku-validator/</loc>
+    <lastmod>2021-06-09T10:21:02+03:00</lastmod>
+  </url><url>
+    <loc>https://mikhailspirin.github.io/codewars-blog/post/42-sudoku-solver/</loc>
+    <lastmod>2021-06-09T10:20:53+03:00</lastmod>
+  </url><url>
+    <loc>https://mikhailspirin.github.io/codewars-blog/post/41-compose-functions-t-combinator/</loc>
+    <lastmod>2021-05-27T00:00:00+03:00</lastmod>
+  </url><url>
+    <loc>https://mikhailspirin.github.io/codewars-blog/post/40-last-survivor-2/</loc>
     <lastmod>2021-05-25T00:00:00+03:00</lastmod>
   </url><url>
     <loc>https://mikhailspirin.github.io/codewars-blog/post/39-chess-fun-cell-color/</loc>

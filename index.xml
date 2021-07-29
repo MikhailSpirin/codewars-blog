@@ -6,7 +6,66 @@
     <description>Recent content on CodeWars Dao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 May 2021 00:00:00 +0300</lastBuildDate><atom:link href="https://mikhailspirin.github.io/codewars-blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Jul 2021 16:24:03 +0300</lastBuildDate><atom:link href="https://mikhailspirin.github.io/codewars-blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kata 45 Sort the Odd</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/45-sort-the-odd/</link>
+      <pubDate>Wed, 28 Jul 2021 16:24:03 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/45-sort-the-odd/</guid>
+      <description>My solution  Best another solution  </description>
+    </item>
+    
+    <item>
+      <title>Kata 44 Transformation Iteration</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/46-transformation-iteration/</link>
+      <pubDate>Wed, 28 Jul 2021 16:23:55 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/46-transformation-iteration/</guid>
+      <description>My solution  Best another solution  </description>
+    </item>
+    
+    <item>
+      <title>Kata 43 Function Iteration</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/44-function-iteration/</link>
+      <pubDate>Thu, 10 Jun 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/44-function-iteration/</guid>
+      <description>My solution let createIterator = function (fn, n) { return function(item){ let result = fn(item); for (let i = n; i &amp;gt; 1; i--) result = fn(result); return result } }  Pure functional programming is hard to me, need to check some videos or articles. Hard to wrap your head around it.
+Best another solution Neat one-liner:
+const createIterator = (f, n) =&amp;gt; j =&amp;gt; [...Array(n)].reduce((r,_) =&amp;gt; f(r), j);  </description>
+    </item>
+    
+    <item>
+      <title>Kata 43 Sudoku Validator</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/43-sudoku-validator/</link>
+      <pubDate>Wed, 09 Jun 2021 10:21:02 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/43-sudoku-validator/</guid>
+      <description>My solution function validSolution(board){ function isunique(arr) { let filtered = arr.filter(x =&amp;gt; x !== 0); return filtered.every((e,i) =&amp;gt; filtered.indexOf(e) === i); } function checkRows(){ return board.every(row =&amp;gt; isunique(row)); } function checkCols(){ return board[0].map((e, i) =&amp;gt; board.map(row =&amp;gt; row[i])).every(col =&amp;gt; isunique(col)); } function checkBoxes(){ let boxes = []; for (let i = 0; i &amp;lt;= 6; i += 3) for (let j = 0; j &amp;lt;= 6; j += 3) boxes.push([...board[j].slice(i,i+3), .</description>
+    </item>
+    
+    <item>
+      <title>Kata 42 Sudoku Solver</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/42-sudoku-solver/</link>
+      <pubDate>Wed, 09 Jun 2021 10:20:53 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/42-sudoku-solver/</guid>
+      <description>My solution Well that was&amp;hellip; fuckingfuck. Very tough for me. Lots of coll moments. And all other things))
+function sudoku(puzzle) { let gaps = [], solution = [], last = 1, pushed = false; puzzle.forEach((nested,i) =&amp;gt; nested.forEach((item,j) =&amp;gt; { if (item === 0) gaps.push([j,i]) })); while (solution.length &amp;lt; gaps.length) { let trySolution, x, y; [x,y] = [gaps[solution.length][0], gaps[solution.length][1]]; pushed = false; for (let i = last; i &amp;lt;= 9; i++) { trySolution = renderSudoku([.</description>
+    </item>
+    
+    <item>
+      <title>Kata 41 Compose Functions T Combinator</title>
+      <link>https://mikhailspirin.github.io/codewars-blog/post/41-compose-functions-t-combinator/</link>
+      <pubDate>Thu, 27 May 2021 00:00:00 +0300</pubDate>
+      
+      <guid>https://mikhailspirin.github.io/codewars-blog/post/41-compose-functions-t-combinator/</guid>
+      <description>https://www.codewars.com/kata/51f9d3db4095e07f130001ee
+My solution var compose = function(n, ...fns) { return (fns.length == 0) ? n : fns.reduce((acc,curr)=&amp;gt;curr(acc),n); }  Ok so im amaxed how simple and quick i solved this task. Deadly simple for me, as im really get used to using reduce day-to-day. Plus, with ES6 its really simple to cut array-like arguments&amp;hellip;
+Best another solution Another way of solving it (didn&amp;rsquo;t thinka about it) is actually using recursion, which is also +- simple to understand, even from desciption of this kata.</description>
+    </item>
+    
     <item>
       <title>Kata 40 Last Survivor 2</title>
       <link>https://mikhailspirin.github.io/codewars-blog/post/40-last-survivor-2/</link>
@@ -53,7 +112,8 @@ Main moment here is when i started to investigate, if all separate side roads ad
       <pubDate>Tue, 18 May 2021 00:00:00 +0300</pubDate>
       
       <guid>https://mikhailspirin.github.io/codewars-blog/post/35-snake-collision/</guid>
-      <description>My solution function snakeCollision(g, m){ let snake = [[0, 0],[0, 1],[0, 2]]; let d = &amp;#34;R&amp;#34;; let steps = 0; const isFood = (cords) =&amp;gt; g[cords[0]][cords[1]]==&amp;#39;$&amp;#39;; const isSnake = (cords) =&amp;gt; snake.some((e)=&amp;gt;(e[0]==cords[0] &amp;amp;&amp;amp; e[1]==cords[1])); const isBorder = (cords) =&amp;gt; (cords[0] &amp;lt; 0 || cords[0] &amp;gt;= 13 || cords[1] &amp;lt; 0 || cords[1] &amp;gt;= 21); const head = () =&amp;gt; snake[snake.length-1]; const move = (d) =&amp;gt; { let dest; switch (d) { case &amp;#34;D&amp;#34;: dest = [head()[0]+1, head()[1]]; break; case &amp;#34;R&amp;#34;: dest = [head()[0], head()[1]+1]; break; case &amp;#34;U&amp;#34;: dest = [head()[0]-1, head()[1]]; break; case &amp;#34;L&amp;#34;: dest = [head()[0], head()[1]-1]; break; } if (isBorder(dest)) return false; if (isSnake(dest)) return false; snake.</description>
+      <description>My solution https://www.codewars.com/kata/5ac616ccbc72620a6a000096/solutions/javascript
+function snakeCollision(g, m){ let snake = [[0, 0],[0, 1],[0, 2]]; let d = &amp;#34;R&amp;#34;; let steps = 0; const isFood = (cords) =&amp;gt; g[cords[0]][cords[1]]==&amp;#39;$&amp;#39;; const isSnake = (cords) =&amp;gt; snake.some((e)=&amp;gt;(e[0]==cords[0] &amp;amp;&amp;amp; e[1]==cords[1])); const isBorder = (cords) =&amp;gt; (cords[0] &amp;lt; 0 || cords[0] &amp;gt;= 13 || cords[1] &amp;lt; 0 || cords[1] &amp;gt;= 21); const head = () =&amp;gt; snake[snake.length-1]; const move = (d) =&amp;gt; { let dest; switch (d) { case &amp;#34;D&amp;#34;: dest = [head()[0]+1, head()[1]]; break; case &amp;#34;R&amp;#34;: dest = [head()[0], head()[1]+1]; break; case &amp;#34;U&amp;#34;: dest = [head()[0]-1, head()[1]]; break; case &amp;#34;L&amp;#34;: dest = [head()[0], head()[1]-1]; break; } if (isBorder(dest)) return false; if (isSnake(dest)) return false; snake.</description>
     </item>
     
     <item>

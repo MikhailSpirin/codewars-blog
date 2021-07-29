@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Kata 42 Sudoku Solver // CodeWars Dao</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.82.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Mikhail Spirin" />
+    <meta name="description" content="Kata" />
+    <link rel="stylesheet" href="https://mikhailspirin.github.io/codewars-blog/css/main.min.e3e673b07e6fcbedc1992304863ca607d598988089b7f690a51a8297034a9c03.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kata 42 Sudoku Solver"/>
+<meta name="twitter:description" content="Kata"/>
+
+    <meta property="og:title" content="Kata 42 Sudoku Solver" />
+<meta property="og:description" content="Kata" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mikhailspirin.github.io/codewars-blog/post/42-sudoku-solver/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-06-09T10:20:53&#43;03:00" />
+<meta property="article:modified_time" content="2021-06-09T10:20:53&#43;03:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://mikhailspirin.github.io/codewars-blog/"><img class="app-header-avatar" src="/codewars-blog/avatar.jpg" alt="Mikhail Spirin" /></a>
+      <h1>CodeWars Dao</h1>
+      <nav class="app-header-menu">
+            <a class="app-header-menu-item" href="/codewars-blog/">Home</a>
+               ❆ 
+            
+            <a class="app-header-menu-item" href="/codewars-blog/about/">About this all</a>
+      </nav>
+      <p>To track progress and show YOU my progress</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/MikhailSpirin" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="https://www.linkedin.com/in/mikhail-spirin-6b0b1837/" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+  <title>LinkedIn</title>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg>
+          </a>
+        
+          <a href="https://www.instagram.com/mixail.spirin/" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-instagram">
+  <title>Instagram</title>
+  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Kata 42 Sudoku Solver</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jun 9, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          7 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-bar-chart">
+  <title>bar-chart</title>
+  <line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line>
+</svg>
+          1500 word count
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://mikhailspirin.github.io/codewars-blog/tags/simple/">simple</a>
+              <a class="tag" href="https://mikhailspirin.github.io/codewars-blog/tags/development/">development</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h2 id="my-solution">My solution</h2>
+<p>Well that was&hellip; fuckingfuck. Very tough for me. Lots of coll moments. And all other things))</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sudoku</span>(<span style="color:#a6e22e">puzzle</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">gaps</span> <span style="color:#f92672">=</span> [], <span style="color:#a6e22e">solution</span> <span style="color:#f92672">=</span> [], <span style="color:#a6e22e">last</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">pushed</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+  <span style="color:#a6e22e">puzzle</span>.<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">nested</span>,<span style="color:#a6e22e">i</span>) =&gt; <span style="color:#a6e22e">nested</span>.<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">j</span>) =&gt; {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">item</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) <span style="color:#a6e22e">gaps</span>.<span style="color:#a6e22e">push</span>([<span style="color:#a6e22e">j</span>,<span style="color:#a6e22e">i</span>])
+  }));
+
+  <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">solution</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">gaps</span>.<span style="color:#a6e22e">length</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">trySolution</span>, <span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>;
+    [<span style="color:#a6e22e">x</span>,<span style="color:#a6e22e">y</span>] <span style="color:#f92672">=</span> [<span style="color:#a6e22e">gaps</span>[<span style="color:#a6e22e">solution</span>.<span style="color:#a6e22e">length</span>][<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">gaps</span>[<span style="color:#a6e22e">solution</span>.<span style="color:#a6e22e">length</span>][<span style="color:#ae81ff">1</span>]];
+    <span style="color:#a6e22e">pushed</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">last</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">9</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+      <span style="color:#a6e22e">trySolution</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">renderSudoku</span>([...<span style="color:#a6e22e">puzzle</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">nested</span> =&gt; [...<span style="color:#a6e22e">nested</span>])], <span style="color:#a6e22e">gaps</span>, <span style="color:#a6e22e">solution</span>, <span style="color:#a6e22e">i</span>);
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">validateSolution</span>(<span style="color:#a6e22e">trySolution</span>)){
+        <span style="color:#a6e22e">solution</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">i</span>);
+        <span style="color:#a6e22e">pushed</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+        <span style="color:#66d9ef">break</span>;
+      }
+    }
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">pushed</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">solution</span>[<span style="color:#a6e22e">solution</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">9</span>)
+        <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">solution</span>[<span style="color:#a6e22e">solution</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">9</span>) <span style="color:#a6e22e">solution</span>.<span style="color:#a6e22e">pop</span>();
+      <span style="color:#a6e22e">solution</span>[<span style="color:#a6e22e">solution</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>;
+    }  
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">renderSudoku</span>([...<span style="color:#a6e22e">puzzle</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">nested</span> =&gt; [...<span style="color:#a6e22e">nested</span>])], <span style="color:#a6e22e">gaps</span>, <span style="color:#a6e22e">solution</span>, <span style="color:#66d9ef">null</span>);
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">renderSudoku</span>(<span style="color:#a6e22e">board</span>, <span style="color:#a6e22e">gaps</span>, <span style="color:#a6e22e">solution</span>, <span style="color:#a6e22e">num</span>){
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">num</span>) <span style="color:#a6e22e">solution</span> <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">solution</span>, <span style="color:#a6e22e">num</span>];
+  <span style="color:#a6e22e">solution</span>.<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">e</span>,<span style="color:#a6e22e">i</span>)=&gt;{
+     <span style="color:#a6e22e">board</span>[<span style="color:#a6e22e">gaps</span>[<span style="color:#a6e22e">i</span>][<span style="color:#ae81ff">1</span>]][<span style="color:#a6e22e">gaps</span>[<span style="color:#a6e22e">i</span>][<span style="color:#ae81ff">0</span>]] <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span>;
+  })
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">board</span>;
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">validateSolution</span>(<span style="color:#a6e22e">board</span>){
+  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">isunique</span>(<span style="color:#a6e22e">arr</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">filtered</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">x</span> =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">!==</span> <span style="color:#ae81ff">0</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">filtered</span>.<span style="color:#a6e22e">every</span>((<span style="color:#a6e22e">e</span>,<span style="color:#a6e22e">i</span>) =&gt; <span style="color:#a6e22e">filtered</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">e</span>) <span style="color:#f92672">===</span> <span style="color:#a6e22e">i</span>);
+  }
+  
+  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">checkRows</span>(){
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">board</span>.<span style="color:#a6e22e">every</span>(<span style="color:#a6e22e">row</span> =&gt; <span style="color:#a6e22e">isunique</span>(<span style="color:#a6e22e">row</span>));
+  }
+  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">checkCols</span>(){
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">board</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">e</span>, <span style="color:#a6e22e">i</span>) =&gt; <span style="color:#a6e22e">board</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">row</span> =&gt; <span style="color:#a6e22e">row</span>[<span style="color:#a6e22e">i</span>])).<span style="color:#a6e22e">every</span>(<span style="color:#a6e22e">col</span> =&gt; <span style="color:#a6e22e">isunique</span>(<span style="color:#a6e22e">col</span>));
+  }
+  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">checkBoxes</span>(){
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">boxes</span> <span style="color:#f92672">=</span> [];
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">6</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">3</span>)
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">6</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">3</span>)
+        <span style="color:#a6e22e">boxes</span>.<span style="color:#a6e22e">push</span>([...<span style="color:#a6e22e">board</span>[<span style="color:#a6e22e">j</span>].<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">i</span>,<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">3</span>), 
+                    ...<span style="color:#a6e22e">board</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>].<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">i</span>,<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">3</span>), 
+                    ...<span style="color:#a6e22e">board</span>[<span style="color:#a6e22e">j</span><span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>].<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">i</span>,<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">3</span>)]);
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">boxes</span>.<span style="color:#a6e22e">every</span>(<span style="color:#a6e22e">box</span> =&gt; <span style="color:#a6e22e">isunique</span>(<span style="color:#a6e22e">box</span>));
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">checkRows</span>() <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">checkCols</span>() <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">checkBoxes</span>();
+}
+</code></pre></div>
+<h2 id="best-another-solution">Best another solution</h2>
+<p>I will read this at night))) Copyrights to</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">calculateGridRange</span>(<span style="color:#a6e22e">gridNumber</span>) {
+  <span style="color:#75715e">// summary:
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  Calculates the min and max row and column numbers associated
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  with a grid number.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// gridNumber: Number
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  Expects a zero-based number (0-8)
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// return: Object
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  An object containing the min and max row and column numbers.
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">rowMin</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">gridNumber</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">3</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>,
+      <span style="color:#a6e22e">columnMin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gridNumber</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>;
+
+  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">row</span><span style="color:#f92672">:</span> {
+      <span style="color:#a6e22e">min</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">rowMin</span>,
+      <span style="color:#a6e22e">max</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">rowMin</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
+    },
+    <span style="color:#a6e22e">column</span><span style="color:#f92672">:</span> {
+      <span style="color:#a6e22e">min</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">columnMin</span>,
+      <span style="color:#a6e22e">max</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">columnMin</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
+    }
+  };
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">calculateGridNumber</span>(<span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">column</span>) {
+  <span style="color:#75715e">// summary:
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  Calculate the grid number that corresponds
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  to the grid in which a row and column pair reside.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// row: Number
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  Expects a zero-based number (0-8)
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// column: Number
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  Expects a zero-based number (0-8)
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// return: Number
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  The grid number in which this row and column pair reside.
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> (Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">row</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">3</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>) <span style="color:#f92672">+</span> Math.<span style="color:#a6e22e">floor</span>(<span style="color:#a6e22e">column</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">3</span>);
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">puzzle</span>) {
+  <span style="color:#75715e">// summary:
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  Takes a sudoku puzzle and creates a number map based on the 
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  numbers&#39; locations within the board.  Also provides methods for
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  dynamically generating maps.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// puzzle: Array[]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  Array of arrays.  Each element in the parent array is a row.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  The index of the element in the parent array, corresponds to
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  the row number.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  Each element in a child array is a number in that row, and its
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  index corresponds to the column number in which it resides.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// return: Object
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  Object containing number map, which is a mapping of where every
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  number currently resides in the board, contains a method for determining if there are still empty spaces on the board, contains method for retrieving the empty spaces in a grid, and contains a method for retrieving the missing numbers for a grid.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// Example:
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  Number Map structure.  Example for number &#34;1&#34;:
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  {
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//    &#34;1&#34;: {
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//      &#34;1&#34;: { // Row number
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//        &#34;3&#34;: { // Column number
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//          rowNumber: 1,
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//          columnNumber: 3,
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//          gridNumber: 1
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//        }
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//      } 
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//    }
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  }
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">numberMaps</span> <span style="color:#f92672">=</span> {},
+      <span style="color:#a6e22e">row</span>, <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>,
+      <span style="color:#a6e22e">number</span>, <span style="color:#a6e22e">numberMap</span>,
+      <span style="color:#a6e22e">columnMax</span>, <span style="color:#a6e22e">map</span>;
+  
+  <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">9</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#a6e22e">row</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">puzzle</span>[<span style="color:#a6e22e">i</span>];
+    
+    <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">9</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
+      
+      <span style="color:#a6e22e">number</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">row</span>[<span style="color:#a6e22e">j</span>];        
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">number</span>) {
+        <span style="color:#a6e22e">numberMap</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numberMaps</span>[<span style="color:#a6e22e">number</span>];
+      
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">numberMap</span>) {
+          <span style="color:#a6e22e">numberMap</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numberMaps</span>[<span style="color:#a6e22e">number</span>] <span style="color:#f92672">=</span> {};
+        }
+        
+        <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numberMap</span>[<span style="color:#a6e22e">i</span>];
+        
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">map</span>) {
+          <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numberMap</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> {};
+        }
+        
+        <span style="color:#a6e22e">map</span>[<span style="color:#a6e22e">j</span>] <span style="color:#f92672">=</span> {
+          <span style="color:#a6e22e">rowNumber</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">i</span>,
+          <span style="color:#a6e22e">columnNumber</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">j</span>,
+          <span style="color:#a6e22e">gridNumber</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">calculateGridNumber</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>)
+        };
+        
+      }
+    }
+  }
+  
+  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">numberMaps</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">numberMaps</span>,
+    <span style="color:#a6e22e">hasEmptySpaces</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
+      <span style="color:#75715e">// summary:
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">//  Determines if there are empty spaces on the entire board.
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">// returns: Boolean
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>;
+      
+      <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">9</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">9</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
+          <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">puzzle</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>]) {
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+          }
+        }
+      }
+      
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+    },
+    <span style="color:#a6e22e">getEmptySpacesByGridNumber</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">gridNumber</span>) {
+      <span style="color:#75715e">// summary:
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">//  Retrieve the empty spaces (spaces filled with the number 0)
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">//  for a provided grid.
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">// gridNumber: Number
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">//  Expects a zero-based number (0-8)
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">// return: Object
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">//  A row/column mapping of empty spaces.
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">emptySpaces</span> <span style="color:#f92672">=</span> {},
+          <span style="color:#a6e22e">range</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">calculateGridRange</span>(<span style="color:#a6e22e">gridNumber</span>),
+          <span style="color:#a6e22e">row</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">range</span>.<span style="color:#a6e22e">row</span>,
+          <span style="color:#a6e22e">column</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">range</span>.<span style="color:#a6e22e">column</span>,
+          <span style="color:#a6e22e">rowMin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">min</span>,
+          <span style="color:#a6e22e">rowMax</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">max</span>,
+          <span style="color:#a6e22e">columnMin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">column</span>.<span style="color:#a6e22e">min</span>,
+          <span style="color:#a6e22e">columnMax</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">column</span>.<span style="color:#a6e22e">max</span>,
+          <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">z</span>, <span style="color:#a6e22e">space</span>;
+      
+      <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">rowMin</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">rowMax</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">z</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">columnMin</span>; <span style="color:#a6e22e">z</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">columnMax</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">z</span><span style="color:#f92672">++</span>) {
+          <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">puzzle</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">z</span>]) {
+            
+            <span style="color:#a6e22e">space</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">emptySpaces</span>[<span style="color:#a6e22e">i</span>];
+            
+            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">space</span>) {
+              <span style="color:#a6e22e">space</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">emptySpaces</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> {};
+            }
+            
+            <span style="color:#a6e22e">space</span>[<span style="color:#a6e22e">z</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+          }
+        }
+      }
+      
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">emptySpaces</span>;
+    },
+    <span style="color:#a6e22e">getMissingNumbersByGrid</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">gridNumber</span>) {
+      <span style="color:#75715e">// summary:
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">//  Returns all of the missing numbers for a given grid as
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">//  a concatenated string.
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">// gridNumber: Number
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">//  Expects a zero-based number (0-8)
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">// return: String
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">range</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">calculateGridRange</span>(<span style="color:#a6e22e">gridNumber</span>),
+          <span style="color:#a6e22e">row</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">range</span>.<span style="color:#a6e22e">row</span>,
+          <span style="color:#a6e22e">column</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">range</span>.<span style="color:#a6e22e">column</span>,
+          <span style="color:#a6e22e">rowMin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">min</span>,
+          <span style="color:#a6e22e">rowMax</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">max</span>,
+          <span style="color:#a6e22e">columnMin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">column</span>.<span style="color:#a6e22e">min</span>,
+          <span style="color:#a6e22e">columnMax</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">column</span>.<span style="color:#a6e22e">max</span>,
+          <span style="color:#a6e22e">missingNumbers</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;123456789&#34;</span>,
+          <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>;
+      
+      <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">rowMin</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">rowMax</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">columnMin</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">columnMax</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
+          <span style="color:#a6e22e">number</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">puzzle</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>];
+          
+          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">number</span>) {
+            <span style="color:#a6e22e">missingNumbers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">missingNumbers</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">number</span>, <span style="color:#e6db74">&#34;&#34;</span>);
+          }
+        }
+      }
+      
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">missingNumbers</span>;
+    }
+  };
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">crossHatch</span>(<span style="color:#a6e22e">gridNumber</span>, <span style="color:#a6e22e">maps</span>, <span style="color:#a6e22e">puzzle</span>) {
+  <span style="color:#75715e">// summary:
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  Performs a cross hatch of a number to a grid&#39;s empty spaces.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  When a number is already on the board, and its location
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  intersects with a row/column in the grid, that grid is removed
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  from the available possibilities for placing a number.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  When only one possibility remains for a number, it is placed.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  If more than one possibility exists, the number is skipped.
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">missingNumbers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">getMissingNumbersByGrid</span>(<span style="color:#a6e22e">gridNumber</span>).<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;&#34;</span>),
+      <span style="color:#a6e22e">total</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">missingNumbers</span>.<span style="color:#a6e22e">length</span>,
+      <span style="color:#a6e22e">gridRange</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">calculateGridRange</span>(<span style="color:#a6e22e">gridNumber</span>),
+      <span style="color:#a6e22e">row</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gridRange</span>.<span style="color:#a6e22e">row</span>,
+      <span style="color:#a6e22e">column</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gridRange</span>.<span style="color:#a6e22e">column</span>,
+      <span style="color:#a6e22e">rowMin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">min</span>,
+      <span style="color:#a6e22e">rowMax</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">row</span>.<span style="color:#a6e22e">max</span>,
+      <span style="color:#a6e22e">columnMin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">column</span>.<span style="color:#a6e22e">min</span>,
+      <span style="color:#a6e22e">columnMax</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">column</span>.<span style="color:#a6e22e">max</span>,
+      <span style="color:#a6e22e">number</span>, <span style="color:#a6e22e">numberMap</span>, <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">rowMap</span>, <span style="color:#a6e22e">rowNumber</span>, <span style="color:#a6e22e">map</span>,
+      <span style="color:#a6e22e">columnNumber</span>, <span style="color:#a6e22e">availableSpaces</span>, <span style="color:#a6e22e">availableRows</span>, <span style="color:#a6e22e">availableColumns</span>;
+  
+  <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">total</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#a6e22e">number</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">missingNumbers</span>[<span style="color:#a6e22e">i</span>];
+    <span style="color:#a6e22e">numberMap</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">numberMaps</span>[<span style="color:#a6e22e">number</span>];
+    <span style="color:#a6e22e">availableSpaces</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">getEmptySpacesByGridNumber</span>(<span style="color:#a6e22e">gridNumber</span>);
+
+    <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">rowNumber</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">numberMap</span>) {
+      <span style="color:#a6e22e">rowMap</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numberMap</span>[<span style="color:#a6e22e">rowNumber</span>];
+      
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">rowNumber</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">rowMin</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">rowNumber</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">rowMax</span>) {                                                      
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">availableSpaces</span>[<span style="color:#a6e22e">rowNumber</span>]) {
+          <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">availableSpaces</span>[<span style="color:#a6e22e">rowNumber</span>];
+        }
+      }
+      
+      <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">columnNumber</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">rowMap</span>) {          
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">columnNumber</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">columnMin</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">columnNumber</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">columnMax</span>) {
+          <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">rowMin</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">rowMax</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">availableSpaces</span>[<span style="color:#a6e22e">j</span>]) {
+              <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">availableSpaces</span>[<span style="color:#a6e22e">j</span>][<span style="color:#a6e22e">columnNumber</span>];
+              
+              <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">availableSpaces</span>[<span style="color:#a6e22e">j</span>]).<span style="color:#a6e22e">length</span>) {
+                <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">availableSpaces</span>[<span style="color:#a6e22e">j</span>];
+              }
+            }
+          }
+        }
+      }
+    }
+
+    <span style="color:#75715e">// Converting the keys of the availableSpaces (which will be row numbers where a number can go)
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// into an array.  We can then check the length of this array to ensure that only one
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// possibile row exists for this number in a grid.
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">availableRows</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">availableSpaces</span>);
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">availableRows</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) {
+      <span style="color:#75715e">// Convert the keys of the availableSpaces[availableRows[0]] (which will be the column numbers where
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">// a number can go) into an array.  We can then check the length of this array, to ensure that only one
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">// possible column exists for this number in a grid.  If there is only one possible column, we have
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">// eliminated all other possibilities for this number in this grid, so we can place it.
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">availableColumns</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">availableSpaces</span>[<span style="color:#a6e22e">availableRows</span>[<span style="color:#ae81ff">0</span>]]);
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">availableColumns</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) {
+        <span style="color:#a6e22e">rowNumber</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">availableRows</span>[<span style="color:#ae81ff">0</span>];
+        <span style="color:#a6e22e">columnNumber</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">availableColumns</span>[<span style="color:#ae81ff">0</span>];
+        
+        <span style="color:#75715e">// Convert to a true number because the test expects the array to contain only numbers.
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">puzzle</span>[<span style="color:#a6e22e">rowNumber</span>][<span style="color:#a6e22e">columnNumber</span>] <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">number</span>, <span style="color:#ae81ff">10</span>);
+        
+        <span style="color:#75715e">// Update the number map to include the new location of this placed number.
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numberMap</span>[<span style="color:#a6e22e">rowNumber</span>];
+        
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">map</span>) {
+          <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numberMap</span>[<span style="color:#a6e22e">rowNumber</span>] <span style="color:#f92672">=</span> {};
+        }
+        
+        <span style="color:#a6e22e">map</span>[<span style="color:#a6e22e">columnNumber</span>] <span style="color:#f92672">=</span> {
+          <span style="color:#a6e22e">rowNumber</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">availableRows</span>[<span style="color:#ae81ff">0</span>],
+          <span style="color:#a6e22e">columnNumber</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">availableColumns</span>[<span style="color:#ae81ff">0</span>],
+          <span style="color:#a6e22e">gridNumber</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">gridNumber</span>
+        };
+      }
+    }
+  }
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sudoku</span>(<span style="color:#a6e22e">puzzle</span>) {
+  <span style="color:#75715e">// summary:
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  Parses the puzzle and begins the solve process.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// puzzle: Array[]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  Array of arrays.  Each element in the parent array is a row.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  The index of the element in the parent array, corresponds to
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  the row number.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  Each element in a child array is a number in that row, and its
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  index corresponds to the column number in which it resides.
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">maps</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">puzzle</span>),
+      <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  
+  <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">maps</span>.<span style="color:#a6e22e">hasEmptySpaces</span>()) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">9</span>) {
+      <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    }
+    
+    <span style="color:#a6e22e">crossHatch</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">maps</span>, <span style="color:#a6e22e">puzzle</span>);
+    <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>;
+  }
+  
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">puzzle</span>;
+}
+</code></pre></div>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
